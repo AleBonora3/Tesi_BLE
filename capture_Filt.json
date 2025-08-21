@@ -1,0 +1,8697 @@
+[
+  {
+    "packet_number": 648,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50059241,
+        "ss": 398,
+        "packet": {
+          "id": 2,
+          "time": 352,
+          "counter": 656
+        },
+        "protover": 3,
+        "phy": 0,
+        "len": 10,
+        "event": {
+          "counter": 0
+        },
+        "address": {
+          "resolved": false
+        },
+        "crcok": true,
+        "header": null,
+        "flags": 1,
+        "plen": 53,
+        "board": {
+          "id": 0
+        },
+        "rssi": -40,
+        "flag": {
+          "reserved7": 0,
+          "reserved2": 0,
+          "reserved1": 0
+        },
+        "channel": 38
+      }
+    },
+    "Layer BTLE": {
+      "initiator": {
+        "address": "40:f1:98:b9:d1:03",
+        "advertising": {
+          "header": 8901,
+          "ch": {
+            "sel": false
+          },
+          "length": 34,
+          "randomized": {
+            "rx": true,
+            "tx": true
+          },
+          "rfu": {
+            "1": 0
+          },
+          "pdu": {
+            "type": 5
+          },
+          "address": "c0:48:ff:f5:9d:b8"
+        },
+        "link": {
+          "layer": {
+            "data": {
+              "sleep": {
+                "clock": {
+                  "accuracy": 1
+                }
+              },
+              "window": {
+                "size": 3,
+                "offset": 7
+              },
+              "interval": 24,
+              "latency": 0,
+              "access": {
+                "address": 2946139297
+              },
+              "hop": 8,
+              "crc": {
+                "init": 5793245
+              },
+              "timeout": 72,
+              "channel": {
+                "map": "b'\\x00\\xf8\\xff\\xff\\x1f'"
+              }
+            }
+          }
+        },
+        "length": 34,
+        "access": {
+          "address": 2391391958
+        },
+        "crc": 15365925
+      }
+    }
+  },
+  {
+    "packet_number": 649,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50070848,
+        "ss": 11607,
+        "packet": {
+          "id": 6,
+          "time": 128,
+          "counter": 657
+        },
+        "protover": 3,
+        "phy": 0,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 0
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 3,
+        "plen": 25,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -38,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 19
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 6,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 3,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 6,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 496681,
+        "control": {
+          "subversion": {
+            "number": 581
+          },
+          "version": {
+            "number": 12
+          },
+          "company": {
+            "id": 15
+          },
+          "opcode": 12
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 652,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50101079,
+        "ss": 230,
+        "packet": {
+          "id": 6,
+          "time": 128,
+          "counter": 660
+        },
+        "protover": 3,
+        "phy": 0,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 1
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 1,
+        "plen": 25,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -53,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 16
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 6,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 3,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "request": {
+          "in": {
+            "frame": 649
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 6,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 16116494,
+        "control": {
+          "subversion": {
+            "number": 12520
+          },
+          "version": {
+            "number": 14
+          },
+          "company": {
+            "id": 89
+          },
+          "opcode": 12
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 653,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50130849,
+        "ss": 29770,
+        "packet": {
+          "id": 6,
+          "time": 152,
+          "counter": 661
+        },
+        "protover": 3,
+        "phy": 0,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 2
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 3,
+        "plen": 28,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -39,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 24
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 9,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 3,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 9,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 15228174,
+        "control": {
+          "feature": {
+            "set": 96767,
+            "iso": {
+              "broadcast": false
+            },
+            "slave": {
+              "initiated": {
+                "features": {
+                  "exchange": true
+                }
+              }
+            },
+            "synchronized": {
+              "receiver": false
+            },
+            "extended": {
+              "reject": {
+                "indication": true
+              }
+            },
+            "remote": {
+              "public": {
+                "key": {
+                  "validation": false
+                }
+              }
+            },
+            "ch": {
+              "sel": {
+                "2": true
+              }
+            },
+            "connected": {
+              "iso": {
+                "host": {
+                  "support": false
+                }
+              }
+            },
+            "connectionless": {
+              "cte": {
+                "receiver": false,
+                "transmitter": false
+              }
+            },
+            "st": {
+              "mod": {
+                "idx": {
+                  "rx": false,
+                  "tx": false
+                }
+              }
+            },
+            "min": {
+              "num": {
+                "used": {
+                  "ch": {
+                    "proc": true
+                  }
+                }
+              }
+            },
+            "le": {
+              "privacy": true,
+              "extended": {
+                "adv": true
+              },
+              "power": {
+                "class": {
+                  "1": false
+                },
+                "control": {
+                  "request": false,
+                  "bit": {
+                    "2": false
+                  }
+                }
+              },
+              "2m": {
+                "phy": true
+              },
+              "ping": true,
+              "pkt": {
+                "len": {
+                  "ext": true
+                }
+              },
+              "encryption": true,
+              "path": {
+                "loss": {
+                  "monitoring": false
+                }
+              },
+              "periodic": {
+                "adv": {
+                  "adi": {
+                    "support": false
+                  }
+                }
+              },
+              "coded": {
+                "phy": true
+              }
+            },
+            "cis": {
+              "central": false,
+              "peripheral": false
+            },
+            "ext": {
+              "scan": {
+                "flt": {
+                  "pol": true
+                }
+              }
+            },
+            "channel": {
+              "classification": false
+            },
+            "sca": {
+              "updates": false
+            },
+            "reserved": "b'\\x00\\x00\\x17'",
+            "bits": 0,
+            "antenna": {
+              "switching": {
+                "rx": {
+                  "aoa": false
+                },
+                "tx": {
+                  "aod": false
+                }
+              }
+            },
+            "connection": {
+              "subrating": false,
+              "host": {
+                "support": false
+              },
+              "cte": {
+                "response": false,
+                "request": false
+              },
+              "parameters": {
+                "request": {
+                  "procedure": true
+                }
+              }
+            },
+            "periodic": {
+              "adv": true,
+              "with": {
+                "responses": {
+                  "advertiser": false
+                }
+              }
+            },
+            "past": {
+              "sender": false,
+              "receiver": false
+            },
+            "cte": {
+              "rx": false
+            },
+            "adv": {
+              "with": {
+                "responses": {
+                  "scanner": false
+                }
+              },
+              "coding": {
+                "selection": false,
+                "host": {
+                  "support": false
+                }
+              }
+            }
+          },
+          "opcode": 8
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 656,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50161078,
+        "ss": 230,
+        "packet": {
+          "id": 6,
+          "time": 152,
+          "counter": 664
+        },
+        "protover": 3,
+        "phy": 0,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 3
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 1,
+        "plen": 28,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -54,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 32
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 9,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 3,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "request": {
+          "in": {
+            "frame": 653
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 9,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 14555330,
+        "control": {
+          "feature": {
+            "set": 1099511644461,
+            "iso": {
+              "broadcast": false
+            },
+            "slave": {
+              "initiated": {
+                "features": {
+                  "exchange": true
+                }
+              }
+            },
+            "synchronized": {
+              "receiver": false
+            },
+            "extended": {
+              "reject": {
+                "indication": true
+              }
+            },
+            "remote": {
+              "public": {
+                "key": {
+                  "validation": false
+                }
+              }
+            },
+            "ch": {
+              "sel": {
+                "2": true
+              }
+            },
+            "connected": {
+              "iso": {
+                "host": {
+                  "support": false
+                }
+              }
+            },
+            "connectionless": {
+              "cte": {
+                "receiver": false,
+                "transmitter": false
+              }
+            },
+            "st": {
+              "mod": {
+                "idx": {
+                  "rx": false,
+                  "tx": false
+                }
+              }
+            },
+            "min": {
+              "num": {
+                "used": {
+                  "ch": {
+                    "proc": false
+                  }
+                }
+              }
+            },
+            "le": {
+              "privacy": false,
+              "extended": {
+                "adv": false
+              },
+              "power": {
+                "class": {
+                  "1": false
+                },
+                "control": {
+                  "request": false,
+                  "bit": {
+                    "2": false
+                  }
+                }
+              },
+              "2m": {
+                "phy": true
+              },
+              "ping": false,
+              "pkt": {
+                "len": {
+                  "ext": true
+                }
+              },
+              "encryption": true,
+              "path": {
+                "loss": {
+                  "monitoring": false
+                }
+              },
+              "periodic": {
+                "adv": {
+                  "adi": {
+                    "support": false
+                  }
+                }
+              },
+              "coded": {
+                "phy": false
+              }
+            },
+            "cis": {
+              "central": false,
+              "peripheral": false
+            },
+            "ext": {
+              "scan": {
+                "flt": {
+                  "pol": false
+                }
+              }
+            },
+            "channel": {
+              "classification": false
+            },
+            "sca": {
+              "updates": false
+            },
+            "reserved": "b'\\x00\\x00{'",
+            "bits": 0,
+            "antenna": {
+              "switching": {
+                "rx": {
+                  "aoa": false
+                },
+                "tx": {
+                  "aod": false
+                }
+              }
+            },
+            "connection": {
+              "subrating": false,
+              "host": {
+                "support": false
+              },
+              "cte": {
+                "response": false,
+                "request": false
+              },
+              "parameters": {
+                "request": {
+                  "procedure": false
+                }
+              }
+            },
+            "periodic": {
+              "adv": false,
+              "with": {
+                "responses": {
+                  "advertiser": false
+                }
+              }
+            },
+            "past": {
+              "sender": false,
+              "receiver": false
+            },
+            "cte": {
+              "rx": false
+            },
+            "adv": {
+              "with": {
+                "responses": {
+                  "scanner": false
+                }
+              },
+              "coding": {
+                "selection": true,
+                "host": {
+                  "support": false
+                }
+              }
+            }
+          },
+          "opcode": 9
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 657,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50190849,
+        "ss": 29771,
+        "packet": {
+          "id": 6,
+          "time": 104,
+          "counter": 665
+        },
+        "protover": 3,
+        "phy": 0,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 4
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 3,
+        "plen": 22,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -40,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 14
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 3,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 3,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 3,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 4210737,
+        "control": {
+          "phys": {
+            "le": {
+              "coded": {
+                "phy": "[False, False]"
+              },
+              "2m": {
+                "phy": "[True, True]"
+              },
+              "1m": {
+                "phy": "[False, False]"
+              }
+            },
+            "reserved": "[0, 0]"
+          },
+          "rx": {
+            "phys": 2
+          },
+          "tx": {
+            "phys": 2
+          },
+          "opcode": 22
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 660,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50221078,
+        "ss": 230,
+        "packet": {
+          "id": 6,
+          "time": 152,
+          "counter": 668
+        },
+        "protover": 3,
+        "phy": 0,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 5
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 1,
+        "plen": 28,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -54,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 11
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 9,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 3,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 9,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 13228956,
+        "control": {
+          "feature": {
+            "set": 1099511644461,
+            "iso": {
+              "broadcast": false
+            },
+            "slave": {
+              "initiated": {
+                "features": {
+                  "exchange": true
+                }
+              }
+            },
+            "synchronized": {
+              "receiver": false
+            },
+            "extended": {
+              "reject": {
+                "indication": true
+              }
+            },
+            "remote": {
+              "public": {
+                "key": {
+                  "validation": false
+                }
+              }
+            },
+            "ch": {
+              "sel": {
+                "2": true
+              }
+            },
+            "connected": {
+              "iso": {
+                "host": {
+                  "support": false
+                }
+              }
+            },
+            "connectionless": {
+              "cte": {
+                "receiver": false,
+                "transmitter": false
+              }
+            },
+            "st": {
+              "mod": {
+                "idx": {
+                  "rx": false,
+                  "tx": false
+                }
+              }
+            },
+            "min": {
+              "num": {
+                "used": {
+                  "ch": {
+                    "proc": false
+                  }
+                }
+              }
+            },
+            "le": {
+              "privacy": false,
+              "extended": {
+                "adv": false
+              },
+              "power": {
+                "class": {
+                  "1": false
+                },
+                "control": {
+                  "request": false,
+                  "bit": {
+                    "2": false
+                  }
+                }
+              },
+              "2m": {
+                "phy": true
+              },
+              "ping": false,
+              "pkt": {
+                "len": {
+                  "ext": true
+                }
+              },
+              "encryption": true,
+              "path": {
+                "loss": {
+                  "monitoring": false
+                }
+              },
+              "periodic": {
+                "adv": {
+                  "adi": {
+                    "support": false
+                  }
+                }
+              },
+              "coded": {
+                "phy": false
+              }
+            },
+            "cis": {
+              "central": false,
+              "peripheral": false
+            },
+            "ext": {
+              "scan": {
+                "flt": {
+                  "pol": false
+                }
+              }
+            },
+            "channel": {
+              "classification": false
+            },
+            "sca": {
+              "updates": false
+            },
+            "reserved": "b'\\x00\\x00\\x93'",
+            "bits": 0,
+            "antenna": {
+              "switching": {
+                "rx": {
+                  "aoa": false
+                },
+                "tx": {
+                  "aod": false
+                }
+              }
+            },
+            "connection": {
+              "subrating": false,
+              "host": {
+                "support": false
+              },
+              "cte": {
+                "response": false,
+                "request": false
+              },
+              "parameters": {
+                "request": {
+                  "procedure": false
+                }
+              }
+            },
+            "periodic": {
+              "adv": false,
+              "with": {
+                "responses": {
+                  "advertiser": false
+                }
+              }
+            },
+            "past": {
+              "sender": false,
+              "receiver": false
+            },
+            "cte": {
+              "rx": false
+            },
+            "adv": {
+              "with": {
+                "responses": {
+                  "scanner": false
+                }
+              },
+              "coding": {
+                "selection": true,
+                "host": {
+                  "support": false
+                }
+              }
+            }
+          },
+          "opcode": 14
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 661,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50250849,
+        "ss": 29771,
+        "packet": {
+          "id": 6,
+          "time": 152,
+          "counter": 669
+        },
+        "protover": 3,
+        "phy": 0,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 6
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 3,
+        "plen": 28,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -39,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 19
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 9,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 3,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "request": {
+          "in": {
+            "frame": 660
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 9,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 4921660,
+        "control": {
+          "feature": {
+            "set": 96557,
+            "iso": {
+              "broadcast": false
+            },
+            "slave": {
+              "initiated": {
+                "features": {
+                  "exchange": true
+                }
+              }
+            },
+            "synchronized": {
+              "receiver": false
+            },
+            "extended": {
+              "reject": {
+                "indication": true
+              }
+            },
+            "remote": {
+              "public": {
+                "key": {
+                  "validation": false
+                }
+              }
+            },
+            "ch": {
+              "sel": {
+                "2": true
+              }
+            },
+            "connected": {
+              "iso": {
+                "host": {
+                  "support": false
+                }
+              }
+            },
+            "connectionless": {
+              "cte": {
+                "receiver": false,
+                "transmitter": false
+              }
+            },
+            "st": {
+              "mod": {
+                "idx": {
+                  "rx": false,
+                  "tx": false
+                }
+              }
+            },
+            "min": {
+              "num": {
+                "used": {
+                  "ch": {
+                    "proc": true
+                  }
+                }
+              }
+            },
+            "le": {
+              "privacy": false,
+              "extended": {
+                "adv": true
+              },
+              "power": {
+                "class": {
+                  "1": false
+                },
+                "control": {
+                  "request": false,
+                  "bit": {
+                    "2": false
+                  }
+                }
+              },
+              "2m": {
+                "phy": true
+              },
+              "ping": false,
+              "pkt": {
+                "len": {
+                  "ext": true
+                }
+              },
+              "encryption": true,
+              "path": {
+                "loss": {
+                  "monitoring": false
+                }
+              },
+              "periodic": {
+                "adv": {
+                  "adi": {
+                    "support": false
+                  }
+                }
+              },
+              "coded": {
+                "phy": true
+              }
+            },
+            "cis": {
+              "central": false,
+              "peripheral": false
+            },
+            "ext": {
+              "scan": {
+                "flt": {
+                  "pol": false
+                }
+              }
+            },
+            "channel": {
+              "classification": false
+            },
+            "sca": {
+              "updates": false
+            },
+            "reserved": "b'\\x00\\x00\\xd2'",
+            "bits": 0,
+            "antenna": {
+              "switching": {
+                "rx": {
+                  "aoa": false
+                },
+                "tx": {
+                  "aod": false
+                }
+              }
+            },
+            "connection": {
+              "subrating": false,
+              "host": {
+                "support": false
+              },
+              "cte": {
+                "response": false,
+                "request": false
+              },
+              "parameters": {
+                "request": {
+                  "procedure": false
+                }
+              }
+            },
+            "periodic": {
+              "adv": true,
+              "with": {
+                "responses": {
+                  "advertiser": false
+                }
+              }
+            },
+            "past": {
+              "sender": false,
+              "receiver": false
+            },
+            "cte": {
+              "rx": false
+            },
+            "adv": {
+              "with": {
+                "responses": {
+                  "scanner": false
+                }
+              },
+              "coding": {
+                "selection": false,
+                "host": {
+                  "support": false
+                }
+              }
+            }
+          },
+          "opcode": 9
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 664,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50281078,
+        "ss": 230,
+        "packet": {
+          "id": 6,
+          "time": 104,
+          "counter": 672
+        },
+        "protover": 3,
+        "phy": 0,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 7
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 1,
+        "plen": 22,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -49,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 27
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 3,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 3,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "request": {
+          "in": {
+            "frame": 657
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 3,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 12632198,
+        "control": {
+          "phys": {
+            "le": {
+              "coded": {
+                "phy": "[False, False]"
+              },
+              "2m": {
+                "phy": "[True, True]"
+              },
+              "1m": {
+                "phy": "[True, True]"
+              }
+            },
+            "reserved": "[0, 0]"
+          },
+          "rx": {
+            "phys": 3
+          },
+          "tx": {
+            "phys": 3
+          },
+          "opcode": 23
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 665,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50310848,
+        "ss": 29770,
+        "packet": {
+          "id": 6,
+          "time": 120,
+          "counter": 673
+        },
+        "protover": 3,
+        "phy": 0,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 8
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 3,
+        "plen": 24,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -40,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 35
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 5,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 3,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "request": {
+          "in": {
+            "frame": 657
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 5,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 11409799,
+        "control": {
+          "phys": {
+            "le": {
+              "coded": {
+                "phy": "[False, False]"
+              },
+              "2m": {
+                "phy": "[True, True]"
+              },
+              "1m": {
+                "phy": "[False, False]"
+              }
+            },
+            "reserved": "[0, 0]"
+          },
+          "m": {
+            "to": {
+              "s": {
+                "phy": 2
+              }
+            }
+          },
+          "s": {
+            "to": {
+              "m": {
+                "phy": 2
+              }
+            }
+          },
+          "instant": 16,
+          "opcode": 24
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 668,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50341080,
+        "ss": 230,
+        "packet": {
+          "id": 6,
+          "time": 152,
+          "counter": 676
+        },
+        "protover": 3,
+        "phy": 0,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 9
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 1,
+        "plen": 28,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -52,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 17
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 9,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 3,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 9,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 10616850,
+        "control": {
+          "max": {
+            "rx": {
+              "octets": 69,
+              "time": 2120
+            },
+            "tx": {
+              "octets": 69,
+              "time": 2120
+            }
+          },
+          "opcode": 20
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 669,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50370850,
+        "ss": 29770,
+        "packet": {
+          "id": 6,
+          "time": 152,
+          "counter": 677
+        },
+        "protover": 3,
+        "phy": 0,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 10
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 3,
+        "plen": 28,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -42,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 14
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 9,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 3,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "request": {
+          "in": {
+            "frame": 668
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 9,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 14614546,
+        "control": {
+          "max": {
+            "rx": {
+              "octets": 251,
+              "time": 2120
+            },
+            "tx": {
+              "octets": 251,
+              "time": 2120
+            }
+          },
+          "opcode": 21
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 683,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50580850,
+        "ss": 29807,
+        "packet": {
+          "id": 6,
+          "time": 88,
+          "counter": 691
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 17
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 30,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -40,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 33
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": true
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 11,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 11,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 6409408,
+        "l2cap": {
+          "index": 0
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 58,
+      "payload": "b'\\t\\x05\\x0b3\\x15\\x00\\x00'",
+      "length": 7
+    }
+  },
+  {
+    "packet_number": 685,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50581282,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 72,
+          "counter": 693
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 17
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 26,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -40,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 33
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 7,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 7,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 16454532,
+        "l2cap": {
+          "index": 1
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 3
+    },
+    "Layer BTATT": {
+      "client": {
+        "rx": {
+          "mtu": 527
+        },
+        "opcode": 2,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 2
+      }
+    }
+  },
+  {
+    "packet_number": 688,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50611046,
+        "ss": 195,
+        "packet": {
+          "id": 6,
+          "time": 72,
+          "counter": 696
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 18
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 26,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -52,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 15
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 7,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 7,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 4707753,
+        "l2cap": {
+          "index": 2
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 3
+    },
+    "Layer BTATT": {
+      "request": {
+        "in": {
+          "frame": 685
+        },
+        "opcode": 3,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 3,
+        "server": {
+          "rx": {
+            "mtu": 65
+          }
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 689,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50640852,
+        "ss": 29806,
+        "packet": {
+          "id": 6,
+          "time": 88,
+          "counter": 697
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 19
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 30,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -41,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 12
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 11,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 11,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 7647656,
+        "l2cap": {
+          "index": 3
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 7
+    },
+    "Layer BTATT": {
+      "starting": {
+        "handle": 1,
+        "ending": {
+          "handle": 65535
+        },
+        "uuid16": 10240,
+        "opcode": 16,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 16
+      }
+    }
+  },
+  {
+    "packet_number": 692,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50671046,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 116,
+          "counter": 700
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 20
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 37,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -52,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 20
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 18,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 18,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 7754285,
+        "l2cap": {
+          "index": 4
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 14
+    },
+    "Layer BTATT": {
+      "service": {
+        "uuid16": "[6145, 6144, 10240]",
+        "handle": "[1, 9]",
+        "attribute": {
+          "data": "[None, None]"
+        },
+        "request": {
+          "in": {
+            "frame": 689
+          }
+        },
+        "length": 6,
+        "group": {
+          "end": {
+            "handle": "[8, 15]"
+          }
+        },
+        "opcode": 17,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 17
+      }
+    }
+  },
+  {
+    "packet_number": 693,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50700852,
+        "ss": 29806,
+        "packet": {
+          "id": 6,
+          "time": 88,
+          "counter": 701
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 21
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 30,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -41,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 28
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 11,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 11,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 6746927,
+        "l2cap": {
+          "index": 5
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 7
+    },
+    "Layer BTATT": {
+      "starting": {
+        "handle": 16,
+        "ending": {
+          "handle": 65535
+        },
+        "uuid16": 10240,
+        "opcode": 16,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 16
+      }
+    }
+  },
+  {
+    "packet_number": 696,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50731048,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 148,
+          "counter": 704
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 22
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 45,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -54,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 36
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 26,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 26,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 10029194,
+        "l2cap": {
+          "index": 6
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 22
+    },
+    "Layer BTATT": {
+      "service": {
+        "uuid16": 10240,
+        "handle": 16,
+        "attribute": {
+          "data": null
+        },
+        "uuid128": "b'#\\xd1\\xbc\\xea_x#\\x15\\xde\\xef\\x12\\x12#\\x15\\x00\\x00'",
+        "request": {
+          "in": {
+            "frame": 693
+          }
+        },
+        "length": 20,
+        "group": {
+          "end": {
+            "handle": 21
+          }
+        },
+        "opcode": 17,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 17
+      }
+    }
+  },
+  {
+    "packet_number": 697,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50760853,
+        "ss": 29805,
+        "packet": {
+          "id": 6,
+          "time": 88,
+          "counter": 705
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 23
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 30,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -39,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 18
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 11,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 11,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 4112396,
+        "l2cap": {
+          "index": 7
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 7
+    },
+    "Layer BTATT": {
+      "starting": {
+        "handle": 22,
+        "ending": {
+          "handle": 65535
+        },
+        "uuid16": 10240,
+        "opcode": 16,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 16
+      }
+    }
+  },
+  {
+    "packet_number": 700,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50791047,
+        "ss": 195,
+        "packet": {
+          "id": 6,
+          "time": 80,
+          "counter": 708
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 24
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 28,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -52,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 15
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 9,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 9,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 7832982,
+        "l2cap": {
+          "index": 8
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 5
+    },
+    "Layer BTATT": {
+      "service": {
+        "uuid128": "b'\\x00\\x00\\x15#\\x12\\x12\\xef\\xde\\x15#x_\\xea\\xbc\\xd1#'",
+        "handle": 22,
+        "error": {
+          "code": 10
+        },
+        "req": {
+          "opcode": {
+            "in": {
+              "error": 16
+            }
+          }
+        },
+        "uuid16": 10240,
+        "opcode": 1,
+        "command": "[False, False]",
+        "authentication": {
+          "signature": "[False, False]"
+        },
+        "method": "[1, 16]"
+      }
+    }
+  },
+  {
+    "packet_number": 701,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50820852,
+        "ss": 29805,
+        "packet": {
+          "id": 6,
+          "time": 88,
+          "counter": 709
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 25
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 30,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -39,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 23
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 11,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 11,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 4476532,
+        "l2cap": {
+          "index": 9
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 7
+    },
+    "Layer BTATT": {
+      "starting": {
+        "handle": 1,
+        "ending": {
+          "handle": 8
+        },
+        "uuid16": 10243,
+        "opcode": 8,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 8
+      }
+    }
+  },
+  {
+    "packet_number": 704,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50851047,
+        "ss": 195,
+        "packet": {
+          "id": 6,
+          "time": 152,
+          "counter": 712
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 26
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 46,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -53,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 31
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 27,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 27,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 1677382,
+        "l2cap": {
+          "index": 10
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 23
+    },
+    "Layer BTATT": {
+      "characteristic": {
+        "uuid16": "[10243, 10757, 10243, 11049, 10243, 11050, 10243]",
+        "properties": "[32, 10, 2]",
+        "broadcast": "[False, False, False]",
+        "indicate": "[True, False, False]",
+        "extended": {
+          "properties": "[False, False, False]"
+        },
+        "notify": "[False, False, False]",
+        "authenticated": {
+          "signed": {
+            "writes": "[False, False, False]"
+          }
+        },
+        "read": "[False, True, True]",
+        "write": "[False, True, False]",
+        "without": {
+          "response": "[False, False, False]"
+        },
+        "service": {
+          "uuid16": "[6145, 6145, 6145, 6145, 6145, 6145]"
+        },
+        "handle": "[2, 3, 5, 6, 7, 8]",
+        "attribute": {
+          "data": "[None, None, None]"
+        },
+        "request": {
+          "in": {
+            "frame": 701
+          }
+        },
+        "length": 7,
+        "opcode": 9,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 9
+      }
+    }
+  },
+  {
+    "packet_number": 705,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50880854,
+        "ss": 29807,
+        "packet": {
+          "id": 6,
+          "time": 80,
+          "counter": 713
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 27
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 28,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -45,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 13
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 9,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 9,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 12870762,
+        "l2cap": {
+          "index": 11
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 5
+    },
+    "Layer BTATT": {
+      "starting": {
+        "handle": 4,
+        "ending": {
+          "handle": 8
+        },
+        "opcode": 4,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 4
+      }
+    }
+  },
+  {
+    "packet_number": 708,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50911049,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 148,
+          "counter": 716
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 28
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 45,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -52,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 21
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 26,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 26,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 10971553,
+        "l2cap": {
+          "index": 12
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 22
+    },
+    "Layer BTATT": {
+      "characteristic": {
+        "uuid16": "[10498, 10243, 10243, 11049, 11049, 10243, 10243, 11050, 11050]",
+        "service": {
+          "uuid16": "[6145, 6145, 6145, 6145, 6145]"
+        },
+        "handle": "[4, 5, 6, 7, 8]",
+        "uuid": {
+          "format": 1
+        },
+        "request": {
+          "in": {
+            "frame": 705
+          }
+        },
+        "information": {
+          "data": "[None, None, None, None, None]"
+        },
+        "opcode": 5,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 5
+      }
+    }
+  },
+  {
+    "packet_number": 709,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50940854,
+        "ss": 29805,
+        "packet": {
+          "id": 6,
+          "time": 80,
+          "counter": 717
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 29
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 28,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -40,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 18
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 9,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 9,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 14124427,
+        "l2cap": {
+          "index": 13
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 5
+    },
+    "Layer BTATT": {
+      "characteristic": {
+        "uuid16": 10498,
+        "configuration": {
+          "client": 2,
+          "reserved": 0,
+          "indication": true,
+          "notification": false
+        },
+        "service": {
+          "uuid16": 6145
+        },
+        "handle": 4,
+        "opcode": 18,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 18
+      }
+    }
+  },
+  {
+    "packet_number": 712,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 50971048,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 64,
+          "counter": 720
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 30
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 24,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -51,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 26
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 5,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 5,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 7691512,
+        "l2cap": {
+          "index": 14
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 1
+    },
+    "Layer BTATT": {
+      "service": {
+        "uuid16": 10498,
+        "handle": 4,
+        "request": {
+          "in": {
+            "frame": 709
+          }
+        },
+        "opcode": 19,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 19,
+        "characteristic": {
+          "uuid16": 10757
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 713,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 51000854,
+        "ss": 29806,
+        "packet": {
+          "id": 6,
+          "time": 88,
+          "counter": 721
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 31
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 30,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -40,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 34
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 11,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 11,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 4009000,
+        "l2cap": {
+          "index": 15
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 7
+    },
+    "Layer BTATT": {
+      "starting": {
+        "handle": 16,
+        "ending": {
+          "handle": 21
+        },
+        "uuid16": 10243,
+        "opcode": 8,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 8
+      }
+    }
+  },
+  {
+    "packet_number": 716,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 51031049,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 236,
+          "counter": 724
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 32
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 67,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -52,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 16
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 48,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 48,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 6155056,
+        "l2cap": {
+          "index": 16
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 44
+    },
+    "Layer BTATT": {
+      "characteristic": {
+        "uuid128": "[b'#\\xd1\\xbc\\xea_x#\\x15\\xde\\xef\\x12\\x12$\\x15\\x00\\x00', b'#\\xd1\\xbc\\xea_x#\\x15\\xde\\xef\\x12\\x12%\\x15\\x00\\x00']",
+        "properties": "[18, 8]",
+        "broadcast": "[False, False]",
+        "indicate": "[False, False]",
+        "extended": {
+          "properties": "[False, False]"
+        },
+        "notify": "[True, False]",
+        "authenticated": {
+          "signed": {
+            "writes": "[False, False]"
+          }
+        },
+        "read": "[True, False]",
+        "write": "[False, True]",
+        "without": {
+          "response": "[False, False]"
+        },
+        "service": {
+          "uuid128": "[b'\\x00\\x00\\x15#\\x12\\x12\\xef\\xde\\x15#x_\\xea\\xbc\\xd1#', b'\\x00\\x00\\x15#\\x12\\x12\\xef\\xde\\x15#x_\\xea\\xbc\\xd1#', b'\\x00\\x00\\x15#\\x12\\x12\\xef\\xde\\x15#x_\\xea\\xbc\\xd1#', b'\\x00\\x00\\x15#\\x12\\x12\\xef\\xde\\x15#x_\\xea\\xbc\\xd1#']"
+        },
+        "handle": "[17, 18, 20, 21]",
+        "attribute": {
+          "data": "[None, None]"
+        },
+        "request": {
+          "in": {
+            "frame": 713
+          }
+        },
+        "length": 21,
+        "uuid16": "[10243, 10243, 10243]",
+        "opcode": 9,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 9
+      }
+    }
+  },
+  {
+    "packet_number": 717,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 51060854,
+        "ss": 29805,
+        "packet": {
+          "id": 6,
+          "time": 80,
+          "counter": 725
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 33
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 28,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -43,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 13
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 9,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 9,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 408699,
+        "l2cap": {
+          "index": 17
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 5
+    },
+    "Layer BTATT": {
+      "starting": {
+        "handle": 19,
+        "ending": {
+          "handle": 19
+        },
+        "opcode": 4,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 4
+      }
+    }
+  },
+  {
+    "packet_number": 720,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 51091049,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 84,
+          "counter": 728
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 34
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 29,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -52,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 21
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 10,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 10,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 3559611,
+        "l2cap": {
+          "index": 18
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 6
+    },
+    "Layer BTATT": {
+      "service": {
+        "uuid128": "b'\\x00\\x00\\x15#\\x12\\x12\\xef\\xde\\x15#x_\\xea\\xbc\\xd1#'",
+        "handle": 19,
+        "uuid": {
+          "format": 1
+        },
+        "request": {
+          "in": {
+            "frame": 717
+          }
+        },
+        "information": {
+          "data": null
+        },
+        "opcode": 5,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 5,
+        "uuid16": 10498,
+        "characteristic": {
+          "uuid128": "b'\\x00\\x00\\x15$\\x12\\x12\\xef\\xde\\x15#x_\\xea\\xbc\\xd1#'"
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 821,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 52620874,
+        "ss": 29806,
+        "packet": {
+          "id": 6,
+          "time": 88,
+          "counter": 829
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 85
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 30,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -42,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 22
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 11,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 11,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 15439568,
+        "l2cap": {
+          "index": 19
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 7
+    },
+    "Layer BTATT": {
+      "starting": {
+        "handle": 9,
+        "ending": {
+          "handle": 15
+        },
+        "uuid16": 10752,
+        "opcode": 8,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 8
+      }
+    }
+  },
+  {
+    "packet_number": 824,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 52651069,
+        "ss": 195,
+        "packet": {
+          "id": 6,
+          "time": 116,
+          "counter": 832
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 86
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 37,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -53,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 30
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 18,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 18,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 3441998,
+        "l2cap": {
+          "index": 20
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 14
+    },
+    "Layer BTATT": {
+      "service": {
+        "uuid16": "[10752, 10752]",
+        "handle": 11,
+        "attribute": {
+          "data": null
+        },
+        "device": {
+          "name": "Nordic_LBS"
+        },
+        "request": {
+          "in": {
+            "frame": 821
+          }
+        },
+        "length": 12,
+        "opcode": 9,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 9
+      }
+    }
+  },
+  {
+    "packet_number": 825,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 52680875,
+        "ss": 29806,
+        "packet": {
+          "id": 6,
+          "time": 80,
+          "counter": 833
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 87
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 28,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -44,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 12
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 9,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 9,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 4371866,
+        "l2cap": {
+          "index": 21
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 5
+    },
+    "Layer BTATT": {
+      "characteristic": {
+        "uuid128": "b'\\x00\\x00\\x15$\\x12\\x12\\xef\\xde\\x15#x_\\xea\\xbc\\xd1#'",
+        "configuration": {
+          "client": 1,
+          "reserved": 0,
+          "indication": false,
+          "notification": true
+        },
+        "service": {
+          "uuid128": "b'\\x00\\x00\\x15#\\x12\\x12\\xef\\xde\\x15#x_\\xea\\xbc\\xd1#'"
+        },
+        "handle": 19,
+        "uuid16": 10498,
+        "opcode": 18,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 18
+      }
+    }
+  },
+  {
+    "packet_number": 828,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 52711070,
+        "ss": 195,
+        "packet": {
+          "id": 6,
+          "time": 64,
+          "counter": 836
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 88
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 24,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -53,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 20
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 5,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 5,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 7691512,
+        "l2cap": {
+          "index": 22
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 1
+    },
+    "Layer BTATT": {
+      "service": {
+        "uuid128": "b'\\x00\\x00\\x15#\\x12\\x12\\xef\\xde\\x15#x_\\xea\\xbc\\xd1#'",
+        "handle": 19,
+        "request": {
+          "in": {
+            "frame": 825
+          }
+        },
+        "opcode": 19,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 19,
+        "uuid16": 10498,
+        "characteristic": {
+          "uuid128": "b'\\x00\\x00\\x15$\\x12\\x12\\xef\\xde\\x15#x_\\xea\\xbc\\xd1#'"
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 982,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 55081108,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 108,
+          "counter": 990
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 167
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 35,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -55,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 12
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 16,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 16,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 362321,
+        "l2cap": {
+          "index": 23
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "min": {
+        "interval": 24,
+        "max": {
+          "interval": 40
+        },
+        "length": 12,
+        "slave": {
+          "latency": 0
+        },
+        "cmd": {
+          "code": 18,
+          "ident": 1,
+          "length": 8
+        },
+        "cid": 5,
+        "timeout": {
+          "multiplier": 42
+        },
+        "command": null
+      }
+    }
+  },
+  {
+    "packet_number": 983,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 55110914,
+        "ss": 29806,
+        "packet": {
+          "id": 6,
+          "time": 92,
+          "counter": 991
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 168
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 31,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -44,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 20
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": true
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 12,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 3,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 12,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 13963621,
+        "control": {
+          "interval": 36,
+          "window": {
+            "size": 3,
+            "offset": 32
+          },
+          "latency": 0,
+          "timeout": 42,
+          "instant": 176,
+          "opcode": 0
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 985,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 55111350,
+        "ss": 193,
+        "packet": {
+          "id": 6,
+          "time": 84,
+          "counter": 993
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 168
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 29,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -43,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 20
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 10,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 10,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 6691012,
+        "l2cap": {
+          "index": 24
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "length": 6,
+      "cmd": {
+        "code": 19,
+        "ident": 1,
+        "length": 2
+      },
+      "cid": 5,
+      "command": null,
+      "move": {
+        "result": 0
+      }
+    }
+  },
+  {
+    "packet_number": 986,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 55140915,
+        "ss": 29565,
+        "packet": {
+          "id": 6,
+          "time": 84,
+          "counter": 994
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 169
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 29,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -44,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 28
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 10,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 648
+          }
+        },
+        "length": 10,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 6691012,
+        "l2cap": {
+          "index": 25
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "length": 6,
+      "cmd": {
+        "code": 19,
+        "ident": 1,
+        "length": 2
+      },
+      "cid": 5,
+      "command": null,
+      "move": {
+        "result": 0
+      }
+    }
+  },
+  {
+    "packet_number": 1032,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 56110932,
+        "ss": 44805,
+        "packet": {
+          "id": 6,
+          "time": 76,
+          "counter": 1040
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 192
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 27,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -45,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 27
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 8,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 8,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 393887,
+        "l2cap": {
+          "index": 26
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 4
+    },
+    "Layer BTATT": {
+      "service": {
+        "uuid128": "b'\\x00\\x00\\x15%\\x12\\x12\\xef\\xde\\x15#x_\\xea\\xbc\\xd1#'",
+        "handle": 21,
+        "value": "b'\\x01'",
+        "opcode": 18,
+        "command": false,
+        "authentication": {
+          "signature": false
+        },
+        "method": 18
+      }
+    }
+  },
+  {
+    "packet_number": 1035,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 56156127,
+        "ss": 195,
+        "packet": {
+          "id": 6,
+          "time": 80,
+          "counter": 1043
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 193
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 28,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -54,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 35
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 9,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 9,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 4117268,
+        "l2cap": {
+          "index": 27
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 4,
+      "length": 5
+    },
+    "Layer BTATT": {
+      "service": {
+        "uuid128": "b'\\x00\\x00\\x15%\\x12\\x12\\xef\\xde\\x15#x_\\xea\\xbc\\xd1#'",
+        "handle": 21,
+        "error": {
+          "code": 5
+        },
+        "req": {
+          "opcode": {
+            "in": {
+              "error": 18
+            }
+          }
+        },
+        "opcode": 1,
+        "command": "[False, False]",
+        "authentication": {
+          "signature": "[False, False]"
+        },
+        "method": "[1, 18]"
+      }
+    }
+  },
+  {
+    "packet_number": 1036,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 56200934,
+        "ss": 44807,
+        "packet": {
+          "id": 6,
+          "time": 88,
+          "counter": 1044
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 194
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 30,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -45,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 17
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 11,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 11,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 8973567,
+        "l2cap": {
+          "index": 28
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 6,
+      "length": 7
+    },
+    "Layer BTSMP": {
+      "reserved": {
+        "flags": 0,
+        "key": {
+          "dist": {
+            "enc": "[True, True]",
+            "reserved": "[0, 0]",
+            "id": "[True, True]",
+            "linkkey": "[True, True]",
+            "sign": "[False, False]"
+          }
+        },
+        "initiator": {
+          "key": {
+            "distribution": 11
+          }
+        },
+        "io": {
+          "capability": 4
+        },
+        "keypress": {
+          "flag": false
+        },
+        "responder": {
+          "key": {
+            "distribution": 11
+          }
+        },
+        "sc": {
+          "flag": true
+        },
+        "mitm": {
+          "flag": true
+        },
+        "authreq": 45,
+        "ct2": {
+          "flag": true
+        },
+        "bonding": {
+          "flags": 1
+        },
+        "max": {
+          "enc": {
+            "key": {
+              "size": 16
+            }
+          }
+        },
+        "opcode": 1,
+        "oob": {
+          "data": {
+            "flags": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1039,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 56246129,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 88,
+          "counter": 1047
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 195
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 30,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -53,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 14
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 11,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 11,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 16585815,
+        "l2cap": {
+          "index": 29
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 6,
+      "length": 7
+    },
+    "Layer BTSMP": {
+      "reserved": {
+        "flags": 0,
+        "key": {
+          "dist": {
+            "enc": "[False, False]",
+            "reserved": "[0, 0]",
+            "id": "[True, False]",
+            "linkkey": "[False, False]",
+            "sign": "[False, False]"
+          }
+        },
+        "initiator": {
+          "key": {
+            "distribution": 2
+          }
+        },
+        "io": {
+          "capability": 3
+        },
+        "keypress": {
+          "flag": false
+        },
+        "responder": {
+          "key": {
+            "distribution": 0
+          }
+        },
+        "sc": {
+          "flag": true
+        },
+        "mitm": {
+          "flag": false
+        },
+        "authreq": 9,
+        "ct2": {
+          "flag": false
+        },
+        "bonding": {
+          "flags": 1
+        },
+        "max": {
+          "enc": {
+            "key": {
+              "size": 16
+            }
+          }
+        },
+        "opcode": 2,
+        "oob": {
+          "data": {
+            "flags": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1078,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 57145955,
+        "ss": 44806,
+        "packet": {
+          "id": 6,
+          "time": 320,
+          "counter": 1086
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 215
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 88,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -44,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 26
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 69,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 69,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 7276596,
+        "l2cap": {
+          "index": 30
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 6,
+      "length": 65
+    },
+    "Layer BTSMP": {
+      "public": {
+        "key": {
+          "x": "b'\\xfb@\\xde\\xc8\\xe9\\xadnNM\\xae\\xb4\\x11\\x11\\x94\\xc8\\x03O:u\\xfdP\\xea]\\xf5U\\x9f\\xf8l\\xc7\\xcb\\xf0#'",
+          "y": "b'\\xb3\\x9b=\\xfe\\xf2\\xc5\\xb5Y\\xa8\\xcd\\xaa\\x01j\\xc51\\xe0o1\\xb8\\xe3\\x8bnp\\xfe\\xff\\xbc\\x9drS\\x8e\\x877'"
+        },
+        "opcode": 12
+      }
+    }
+  },
+  {
+    "packet_number": 1081,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 57191152,
+        "ss": 195,
+        "packet": {
+          "id": 6,
+          "time": 320,
+          "counter": 1089
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 216
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 88,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -54,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 34
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": true
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 69,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 69,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 9884688,
+        "l2cap": {
+          "index": 31
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 6,
+      "length": 65
+    },
+    "Layer BTSMP": {
+      "public": {
+        "key": {
+          "x": "b'\\xe9<\\xfcJ\\x81#6\\x89\\x05\\x85/U\\xbd\\xa6\\xa1B\\xcd\\xca\\xe0H\\x8aO\\xd97\\x17\\xa9\\x93\\xf5\\xc1\\x86\\x0c\\x85'",
+          "y": "b'\\xb2\\x17\\xa7\\xbd\\xb3\\xd7\\xdc\\x18`tk\\x17\\xd5\\x83R\\x15\\x00X\\xea7\\xc6\\xa8\\x8c\\xd6<\\xd2\\xc4g2<|Z'"
+        },
+        "opcode": 12
+      }
+    }
+  },
+  {
+    "packet_number": 1083,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 57191817,
+        "ss": 195,
+        "packet": {
+          "id": 6,
+          "time": 128,
+          "counter": 1091
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 216
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 40,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -55,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 34
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 21,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 21,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 15080855,
+        "l2cap": {
+          "index": 32
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 6,
+      "length": 17
+    },
+    "Layer BTSMP": {
+      "cfm": {
+        "value": "b'?<\\xe4\\xb4\\xb9\\x00\\x15[\\x8a\\x0e}\\\\<B\\xf5\\xa8'",
+        "opcode": 3
+      }
+    }
+  },
+  {
+    "packet_number": 1084,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 57235958,
+        "ss": 44141,
+        "packet": {
+          "id": 6,
+          "time": 128,
+          "counter": 1092
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 217
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 40,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -45,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 16
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 21,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 21,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 6448527,
+        "l2cap": {
+          "index": 33
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 6,
+      "length": 17
+    },
+    "Layer BTSMP": {
+      "random": {
+        "value": "b'\\xda\\x16L6\\x8f|\\xd1%\\xce\\xbf\\x9dGo\\x8b\\xf9\\xe9'",
+        "opcode": 4
+      }
+    }
+  },
+  {
+    "packet_number": 1087,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 57281153,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 128,
+          "counter": 1095
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 218
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 40,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -54,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 13
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 21,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 21,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 390785,
+        "l2cap": {
+          "index": 34
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 6,
+      "length": 17
+    },
+    "Layer BTSMP": {
+      "random": {
+        "value": "b'oO}H{.L\\x17\\xeb\\x0e4i\\x02h\\xca\\x7f'",
+        "opcode": 4
+      }
+    }
+  },
+  {
+    "packet_number": 1088,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 57325960,
+        "ss": 44807,
+        "packet": {
+          "id": 6,
+          "time": 128,
+          "counter": 1096
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 219
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 40,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -44,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 21
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 21,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 21,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 5359771,
+        "l2cap": {
+          "index": 35
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 6,
+      "length": 17
+    },
+    "Layer BTSMP": {
+      "dhkey": {
+        "check": "b'\\xa2\\x98-\\x89\\xfc\\x9aM\\xb8R\\xf4y4\\xc7\\x1d\\x97\\x00'",
+        "opcode": 13
+      }
+    }
+  },
+  {
+    "packet_number": 1091,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 57371156,
+        "ss": 195,
+        "packet": {
+          "id": 6,
+          "time": 128,
+          "counter": 1099
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 220
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 40,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -54,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 29
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 21,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 21,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 12123558,
+        "l2cap": {
+          "index": 36
+        }
+      }
+    },
+    "Layer BTL2CAP": {
+      "cid": 6,
+      "length": 17
+    },
+    "Layer BTSMP": {
+      "dhkey": {
+        "check": "b'v?\\x82dGg-\\xeb\\xbaC\\xf6\\xbe\\x8a\\xdf\\xb6~'",
+        "opcode": 13
+      }
+    }
+  },
+  {
+    "packet_number": 1094,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 57460964,
+        "ss": 44807,
+        "packet": {
+          "id": 6,
+          "time": 136,
+          "counter": 1102
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 222
+        },
+        "direction": true,
+        "crcok": true,
+        "header": null,
+        "flags": 19,
+        "plen": 42,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -43,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 19
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 23,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 3,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 23,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 1590442,
+        "control": {
+          "random": {
+            "number": 0
+          },
+          "encrypted": {
+            "diversifier": 0
+          },
+          "master": {
+            "session": {
+              "initialization": {
+                "vector": 73980098
+              },
+              "key": {
+                "diversifier": 15927487904776279030
+              }
+            }
+          },
+          "opcode": 3
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1097,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 57506159,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 96,
+          "counter": 1105
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 223
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 32,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -53,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 16
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 13,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 3,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "request": {
+          "in": {
+            "frame": 1094
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 13,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 10489624,
+        "control": {
+          "slave": {
+            "session": {
+              "initialization": {
+                "vector": 4142386921
+              },
+              "key": {
+                "diversifier": 5724847785870175011
+              }
+            }
+          },
+          "opcode": 4
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1101,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 57596161,
+        "ss": 195,
+        "packet": {
+          "id": 6,
+          "time": 48,
+          "counter": 1109
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": false,
+        "len": 10,
+        "event": {
+          "counter": 225
+        },
+        "direction": false,
+        "crcok": true,
+        "header": null,
+        "flags": 17,
+        "plen": 20,
+        "mic": {
+          "not": {
+            "relevant": 0
+          }
+        },
+        "board": {
+          "id": 0
+        },
+        "rssi": -55,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 32
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 1,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 3,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "request": {
+          "in": {
+            "frame": 1094
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 1,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 15689282,
+        "control": {
+          "opcode": 5
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1102,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 57640968,
+        "ss": 44807,
+        "packet": {
+          "id": 6,
+          "time": 64,
+          "counter": 1110
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 226
+        },
+        "direction": true,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 23,
+        "plen": 24,
+        "board": {
+          "id": 0
+        },
+        "rssi": -46,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 14
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 5,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 3,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 5,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 9737149,
+        "control": {
+          "opcode": 68
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1105,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 57686164,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 64,
+          "counter": 1113
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 227
+        },
+        "direction": false,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 21,
+        "plen": 24,
+        "board": {
+          "id": 0
+        },
+        "rssi": -54,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 11
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 5,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 3,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 5,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 2861200,
+        "control": {
+          "opcode": 70
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1106,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 57730972,
+        "ss": 44808,
+        "packet": {
+          "id": 6,
+          "time": 144,
+          "counter": 1114
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 228
+        },
+        "direction": true,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 23,
+        "plen": 44,
+        "board": {
+          "id": 0
+        },
+        "rssi": -44,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 19
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": true
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 25,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 25,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 4648505,
+        "l2cap": {
+          "data": null,
+          "index": 37
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1108,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 57731461,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 108,
+          "counter": 1116
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 228
+        },
+        "direction": true,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 23,
+        "plen": 35,
+        "board": {
+          "id": 0
+        },
+        "rssi": -44,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 19
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": true
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 16,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 16,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 4684274,
+        "l2cap": {
+          "data": null,
+          "index": 38
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1109,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 57775974,
+        "ss": 44513,
+        "packet": {
+          "id": 6,
+          "time": 108,
+          "counter": 1117
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 229
+        },
+        "direction": true,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 23,
+        "plen": 35,
+        "board": {
+          "id": 0
+        },
+        "rssi": -44,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 27
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": true
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 16,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 16,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 4684274,
+        "l2cap": {
+          "data": null
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1111,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 57776426,
+        "ss": 193,
+        "packet": {
+          "id": 6,
+          "time": 92,
+          "counter": 1119
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 229
+        },
+        "direction": true,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 23,
+        "plen": 31,
+        "board": {
+          "id": 0
+        },
+        "rssi": -45,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 27
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 12,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 12,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 10787586,
+        "l2cap": {
+          "data": null,
+          "index": 39
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1114,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 57821168,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 80,
+          "counter": 1122
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 230
+        },
+        "direction": false,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 21,
+        "plen": 28,
+        "board": {
+          "id": 0
+        },
+        "rssi": -57,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 35
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 9,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 9,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 14398481,
+        "l2cap": {
+          "data": null,
+          "index": 40
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1153,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 58765997,
+        "ss": 44807,
+        "packet": {
+          "id": 6,
+          "time": 104,
+          "counter": 1161
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 251
+        },
+        "direction": true,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 23,
+        "plen": 34,
+        "board": {
+          "id": 0
+        },
+        "rssi": -44,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 18
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 15,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 15,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 13380767,
+        "l2cap": {
+          "data": null,
+          "index": 41
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1156,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 58811192,
+        "ss": 195,
+        "packet": {
+          "id": 6,
+          "time": 132,
+          "counter": 1164
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 252
+        },
+        "direction": false,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 21,
+        "plen": 41,
+        "board": {
+          "id": 0
+        },
+        "rssi": -52,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 26
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 22,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 22,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 11582655,
+        "l2cap": {
+          "data": null,
+          "index": 42
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1190,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 59576208,
+        "ss": 195,
+        "packet": {
+          "id": 6,
+          "time": 796,
+          "counter": 1198
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 269
+        },
+        "direction": false,
+        "micok": false,
+        "crcok": false,
+        "header": null,
+        "flags": 20,
+        "plen": 207,
+        "board": {
+          "id": 0
+        },
+        "rssi": -76,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 14
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 188,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 1,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 188,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 14584923,
+        "l2cap": {
+          "data": null,
+          "index": 42
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1196,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 59711208,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 92,
+          "counter": 1204
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 272
+        },
+        "direction": false,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 21,
+        "plen": 31,
+        "board": {
+          "id": 0
+        },
+        "rssi": -67,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 12
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 12,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 12,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 13977445,
+        "l2cap": {
+          "data": null,
+          "index": 43
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1206,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 59936216,
+        "ss": 195,
+        "packet": {
+          "id": 6,
+          "time": 540,
+          "counter": 1214
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 277
+        },
+        "direction": false,
+        "micok": false,
+        "crcok": false,
+        "header": null,
+        "flags": 20,
+        "plen": 143,
+        "board": {
+          "id": 0
+        },
+        "rssi": -71,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 15
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 124,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 1,
+          "llid": 1,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 124,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 5840599,
+        "l2cap": {
+          "data": null,
+          "index": 43
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1217,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 60206220,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 92,
+          "counter": 1225
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 283
+        },
+        "direction": false,
+        "micok": false,
+        "crcok": false,
+        "header": null,
+        "flags": 20,
+        "plen": 31,
+        "board": {
+          "id": 0
+        },
+        "rssi": -71,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 15
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": true
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 12,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": 8,
+            "present": true,
+            "time": 8,
+            "rfu": 0,
+            "type": 0
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 12,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "l2cap": {
+          "data": null,
+          "index": 44
+        }
+      }
+    },
+    "Layer _WS_UNREASSEMBLED": {}
+  },
+  {
+    "packet_number": 1223,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 60341222,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 540,
+          "counter": 1231
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 286
+        },
+        "direction": false,
+        "micok": false,
+        "crcok": false,
+        "header": null,
+        "flags": 20,
+        "plen": 143,
+        "board": {
+          "id": 0
+        },
+        "rssi": -74,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 13
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": true
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 124,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 1,
+          "cte": {
+            "info": 91,
+            "present": true,
+            "time": 27,
+            "rfu": 0,
+            "type": 1
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 124,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "l2cap": {
+          "data": null,
+          "index": 44
+        }
+      }
+    },
+    "Layer _WS_UNREASSEMBLED": {}
+  },
+  {
+    "packet_number": 1225,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 60386224,
+        "ss": 195,
+        "packet": {
+          "id": 6,
+          "time": 92,
+          "counter": 1233
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 287
+        },
+        "direction": false,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 21,
+        "plen": 31,
+        "board": {
+          "id": 0
+        },
+        "rssi": -65,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 21
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 12,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 12,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 16634424,
+        "l2cap": {
+          "data": null,
+          "index": 45
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1244,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 60881231,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 92,
+          "counter": 1252
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 298
+        },
+        "direction": false,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 21,
+        "plen": 31,
+        "board": {
+          "id": 0
+        },
+        "rssi": -66,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 24
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 12,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 12,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 7443673,
+        "l2cap": {
+          "data": null,
+          "index": 46
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1251,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 61061237,
+        "ss": 195,
+        "packet": {
+          "id": 6,
+          "time": 92,
+          "counter": 1259
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 302
+        },
+        "direction": false,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 21,
+        "plen": 31,
+        "board": {
+          "id": 0
+        },
+        "rssi": -67,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 19
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 12,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 12,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 5755132,
+        "l2cap": {
+          "data": null
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1257,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 61196239,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 284,
+          "counter": 1265
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 305
+        },
+        "direction": false,
+        "micok": false,
+        "crcok": false,
+        "header": null,
+        "flags": 20,
+        "plen": 79,
+        "board": {
+          "id": 0
+        },
+        "rssi": -64,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 17
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 60,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 1,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 60,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 10553364,
+        "l2cap": {
+          "data": null,
+          "index": 46
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1275,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 61601247,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 76,
+          "counter": 1283
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 314
+        },
+        "direction": false,
+        "micok": false,
+        "crcok": false,
+        "header": null,
+        "flags": 20,
+        "plen": 27,
+        "board": {
+          "id": 0
+        },
+        "rssi": -68,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 15
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 8,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 8,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 7112583,
+        "l2cap": {
+          "data": null,
+          "index": 47
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1373,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 63896098,
+        "ss": 44807,
+        "packet": {
+          "id": 6,
+          "time": 92,
+          "counter": 1381
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 365
+        },
+        "direction": true,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 23,
+        "plen": 31,
+        "board": {
+          "id": 0
+        },
+        "rssi": -43,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 16
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 12,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 12,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 14560334,
+        "l2cap": {
+          "data": null,
+          "index": 48
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1376,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 63941294,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 80,
+          "counter": 1384
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 366
+        },
+        "direction": false,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 21,
+        "plen": 28,
+        "board": {
+          "id": 0
+        },
+        "rssi": -60,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 13
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 9,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 9,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 12913436,
+        "l2cap": {
+          "data": null,
+          "index": 49
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1497,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 66686139,
+        "ss": 44807,
+        "packet": {
+          "id": 6,
+          "time": 92,
+          "counter": 1505
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 427
+        },
+        "direction": true,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 23,
+        "plen": 31,
+        "board": {
+          "id": 0
+        },
+        "rssi": -41,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 20
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 12,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 12,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 15769374,
+        "l2cap": {
+          "data": null,
+          "index": 50
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1500,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 66731334,
+        "ss": 195,
+        "packet": {
+          "id": 6,
+          "time": 80,
+          "counter": 1508
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 428
+        },
+        "direction": false,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 21,
+        "plen": 28,
+        "board": {
+          "id": 0
+        },
+        "rssi": -55,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 28
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 9,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 9,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 13049170,
+        "l2cap": {
+          "data": null,
+          "index": 51
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1623,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 69521163,
+        "ss": 44806,
+        "packet": {
+          "id": 6,
+          "time": 92,
+          "counter": 1631
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 490
+        },
+        "direction": true,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 23,
+        "plen": 31,
+        "board": {
+          "id": 0
+        },
+        "rssi": -43,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 17
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 12,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 12,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 6983954,
+        "l2cap": {
+          "data": null,
+          "index": 52
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1626,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 69566357,
+        "ss": 194,
+        "packet": {
+          "id": 6,
+          "time": 80,
+          "counter": 1634
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 491
+        },
+        "direction": false,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 21,
+        "plen": 28,
+        "board": {
+          "id": 0
+        },
+        "rssi": -54,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 14
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 1
+              }
+            }
+          },
+          "length": 9,
+          "sequence": {
+            "number": 0
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 9,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 9805140,
+        "l2cap": {
+          "data": null,
+          "index": 53
+        }
+      }
+    }
+  },
+  {
+    "packet_number": 1991,
+    "Layer NORDIC_BLE": {
+      "delta": {
+        "time": 77891431,
+        "ss": 195,
+        "packet": {
+          "id": 6,
+          "time": 92,
+          "counter": 1999
+        },
+        "protover": 3,
+        "phy": 1,
+        "encrypted": true,
+        "len": 10,
+        "event": {
+          "counter": 676
+        },
+        "direction": false,
+        "micok": false,
+        "crcok": true,
+        "header": null,
+        "flags": 21,
+        "plen": 31,
+        "board": {
+          "id": 0
+        },
+        "rssi": -52,
+        "flag": {
+          "reserved7": 0
+        },
+        "channel": 14
+      }
+    },
+    "Layer BTLE": {
+      "data": {
+        "header": {
+          "more": {
+            "data": false
+          },
+          "next": {
+            "expected": {
+              "sequence": {
+                "number": 0
+              }
+            }
+          },
+          "length": 12,
+          "sequence": {
+            "number": 1
+          },
+          "rfu": 0,
+          "llid": 2,
+          "cte": {
+            "info": {
+              "present": false
+            }
+          }
+        },
+        "connection": {
+          "parameters": {
+            "in": 983
+          }
+        },
+        "length": 12,
+        "access": {
+          "address": 2946139297
+        },
+        "slave": {
+          "bd": {
+            "addr": "c0:48:ff:f5:9d:b8"
+          }
+        },
+        "master": {
+          "bd": {
+            "addr": "40:f1:98:b9:d1:03"
+          }
+        },
+        "crc": 13593578,
+        "l2cap": {
+          "data": null,
+          "index": 54
+        }
+      }
+    }
+  }
+]
