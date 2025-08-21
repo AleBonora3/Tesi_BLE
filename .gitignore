@@ -1,0 +1,19 @@
+# Ambienti virtuali
+.venv/
+venv/
+
+# Cache di Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Configurazioni IDE/editor
+.vscode/
+.idea/
+
+# File temporanei
+*.log
+*.tmp
+source /home/alebonny/Scrivania/Codici_tesi/2Test/.venv/bin/activate
+
