@@ -26,4 +26,4 @@ Thumbs.db
 SnifferAPI/
 # (opzionale) file PCAP/PCAPNG pesanti prodotti dallo sniffer
 *.pcap
-*.pcapng
+#*.pcapng
