@@ -41,7 +41,7 @@ Note
 - Il filtro integrato produce `*_Filt.json`, che è l'input preferito per l'audit.
 - L'audit è progettato per essere *tollerante* a variazioni nei campi dei layer.
 
-Autore / Corso
+Alessio Bonora
 --------------
 - Progetto tesi – Università degli Studi di Milano
 - Corso: Sicurezza dei sistemi e delle reti informatiche
