@@ -1,19 +1,29 @@
-# Ambienti virtuali
+# ===== Python envs =====
 .venv/
 venv/
 
-# Cache di Python
+# ===== Byte-compiled / cache =====
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
 
-# Configurazioni IDE/editor
+# ===== IDE / editor =====
 .vscode/
 .idea/
 
-# File temporanei
+# ===== OS cruft =====
+.DS_Store
+Thumbs.db
+
+# ===== Logs / tmp =====
 *.log
 *.tmp
-source /home/alebonny/Scrivania/Codici_tesi/2Test/.venv/bin/activate
+*.temp
 
+# ===== Project-specific =====
+# Non voglio committare la libreria esterna
+SnifferAPI/
+# (opzionale) file PCAP/PCAPNG pesanti prodotti dallo sniffer
+*.pcap
+*.pcapng
