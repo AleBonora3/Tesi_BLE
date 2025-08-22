@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-BLE Pairing Auditor (focus sez. 4.2)
+BLE Pairing Auditor 
 Analizza JSON/NDJSON di traffico BLE filtrato e produce un report
 sul pairing: metodo, association model, chiavi distribuite, key size,
 SC/MITM/bonding e livello di sicurezza (Mode 1 Level 1..4).
@@ -151,12 +151,10 @@ LL_CTRL_NAMES = {
     0x04: "LL_ENC_RSP",
     0x05: "LL_START_ENC_REQ",
     0x06: "LL_START_ENC_RSP",
-    0x07: "LL_PAUSE_ENC_REQ",
-    0x08: "LL_PAUSE_ENC_RSP",
+    0x0A: "LL_PAUSE_ENC_REQ",
+    0x0B: "LL_PAUSE_ENC_RSP",
     0x0C: "LL_VERSION_IND",
 }
-
-LL_FEATURE_NAMES = {0x08: "LL_FEATURE_REQ", 0x09: "LL_FEATURE_RSP"}
 
 SMP_NAMES = {
     0x01: "PAIRING_REQ",
@@ -261,18 +259,30 @@ def detect_connection(pkt: Dict[str, Any]) -> Optional[str]:
 
     return None
 
-def detect_ll_encryption_signals(pkt: Dict) -> Optional[str]:
-    opcode = _safe_get(pkt, ["Layer BTLE", "data", "control", "opcode"])
-    if opcode is None:
+def detect_ll_encryption_signals(pkt: Dict[str, Any]) -> Optional[str]:
+    """
+    Cerca SOLO nel Layer BTLE la chiave 'opcode' e restituisce il nome
+    corrispondente in LL_CTRL_NAMES (es. 'LL_ENC_REQ'), altrimenti None.
+    """
+    # isola i layer BTLE (accettiamo alias comuni)
+    btle_layers = find_layers_by_name(pkt, candidates=("btle", "bluetooth_le", "bluetooth_low_energy", "ble"))
+    if not btle_layers:
         return None
-    try:
-        op = int(opcode)
-    except Exception:
-        try:
-            op = int(str(opcode), 0)
-        except Exception:
-            return None
-    return LL_CTRL_NAMES.get(op) or LL_FEATURE_NAMES.get(op)
+
+    for btle in btle_layers:
+        if not isinstance(btle, dict):
+            continue
+
+        # come in detect_smp_info, ma qui guardiamo solo 'opcode'
+        op = _first_int_by_suffix(btle, ["opcode"])
+        if op is None:
+            continue
+
+        name = LL_CTRL_NAMES.get(op)
+        if name:
+            return name  # es. "LL_ENC_REQ"
+
+    return None
 
 def is_packet_encrypted(pkt: Dict) -> Optional[bool]:
     """
@@ -893,13 +903,6 @@ def format_report(res: Dict[str, Any]) -> str:
         lines.append("- Non rilevati.")
     lines.append("")
     
-    # Eventi LL legati alla cifratura (tutti, uno per riga)
-    if res.get("ll_encryption_events"):
-        lines.append("## Eventi LL legati alla cifratura")
-        for n, name in res["ll_encryption_events"]:
-            lines.append(f"- #{n}: {name}")
-            
-    lines.append("")
     # Traccia SMP (tutta, una per riga)
     if res.get("smp_trace"):
         lines.append("## Traccia SMP")
@@ -907,6 +910,13 @@ def format_report(res: Dict[str, Any]) -> str:
             lines.append(f"- #{n}: {name}")
     lines.append("")
 
+    # Eventi LL legati alla cifratura (tutti, uno per riga)
+    if res.get("ll_encryption_events"):
+        lines.append("## Eventi LL legati alla cifratura")
+        for n, name in res["ll_encryption_events"]:
+            lines.append(f"- #{n}: {name}")
+    lines.append("")
+    
     # Pairing (REQ/RSP)
     lines.append("## Pairing (REQ/RSP, sez. 4.2)")
     px = res.get("pairing_exchange") or {}
