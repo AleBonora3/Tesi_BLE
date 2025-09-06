@@ -1060,7 +1060,7 @@ def format_report(res: Dict[str, Any]) -> str:
     lines.append("")
     
     # Pairing (REQ/RSP)
-    lines.append("## Pairing (REQ/RSP, sez. 4.2)")
+    lines.append("## Pairing (REQ/RSP)")
     px = res.get("pairing_exchange") or {}
     rq = px.get("request"); rs = px.get("response"); dec = px.get("decision")
 
