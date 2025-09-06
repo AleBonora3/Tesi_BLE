@@ -5,8 +5,6 @@
 - Primo pacchetto cifrato: #3724
 
 ## Indirizzi e Tipologia
-- initiator: 69:9d:fc:24:53:0f  →  private_resolvable
-- advertiser: c0:48:ff:f5:9d:b8  →  static_random
 - master: 69:9d:fc:24:53:0f  →  private_resolvable
 - slave: c0:48:ff:f5:9d:b8  →  static_random
 
@@ -114,34 +112,39 @@
 _Criteri:_ cifratura osservata, LE Secure Connections, autenticazione MITM/metodo autenticato, key size effettiva=16
 
 ## ATT/GATT visibili
-### In chiaro (prima della cifratura)
-- #2760: Exchange MTU Request (MTU=527)
-- #2763: Exchange MTU Response (MTU=65)
-- #2764: Read By Group Type Request (handle 0x0001)
-- #2767: Read By Group Type Response
-- #2768: Read By Group Type Request (handle 0x0010)
-- #2771: Read By Group Type Response (handle 0x0015)
-- #2772: Read By Group Type Request (handle 0x0016)
-- #2775: Read Request (handle 0x0016)
-- #2776: Read By Type Request (handle 0x0001)
-- #2779: Read By Type Response
-- #2780: Find Information Request (handle 0x0004)
-- #2783: Find Information Response
-- #2784: Write Request (handle 0x0004)
-- #2787: Write Response (handle 0x0004)
-- #2788: Read By Type Request (handle 0x0010)
-- #2791: Read By Type Response
-- #2792: Find Information Request (handle 0x0013)
-- #2795: Find Information Response (handle 0x0013)
-- #2892: Read By Type Request (handle 0x0009)
-- #2895: Read By Type Response (handle 0x000B)
-- #2898: Write Request (handle 0x0013)
-- #2901: Write Response (handle 0x0013)
-- #2980: Handle Value Notification (handle 0x0012)
-- #3028: Handle Value Notification (handle 0x0012)
-- #3080: Handle Value Notification (handle 0x0012)
-- #3112: Handle Value Notification (handle 0x0012)
-- #3235: Write Request (handle 0x0015)
-- #3238: Find Information Response (handle 0x0015)
+### In chiaro (prima della cifratura) [tot: 28]
+- #2760: (2, 'Exchange MTU Request (MTU=527)')
+- #2763: (3, 'Exchange MTU Response (MTU=65)')
+- #2764: (16, 'Read By Group Type Request (handle 0x0001)')
+- #2767: (17, 'Read By Group Type Response')
+- #2768: (16, 'Read By Group Type Request (handle 0x0010)')
+- #2771: (17, 'Read By Group Type Response (handle 0x0015)')
+- #2772: (16, 'Read By Group Type Request (handle 0x0016)')
+- #2775: (10, 'Read Request (handle 0x0016)')
+- #2776: (8, 'Read By Type Request (handle 0x0001)')
+- #2779: (9, 'Read By Type Response')
+- #2780: (4, 'Find Information Request (handle 0x0004)')
+- #2783: (5, 'Find Information Response')
+- #2784: (18, 'Write Request (handle 0x0004)')
+- #2787: (19, 'Write Response (handle 0x0004)')
+- #2788: (8, 'Read By Type Request (handle 0x0010)')
+- #2791: (9, 'Read By Type Response')
+- #2792: (4, 'Find Information Request (handle 0x0013)')
+- #2795: (5, 'Find Information Response (handle 0x0013)')
+- #2892: (8, 'Read By Type Request (handle 0x0009)')
+- #2895: (9, 'Read By Type Response (handle 0x000B)')
+- #2898: (18, 'Write Request (handle 0x0013)')
+- #2901: (19, 'Write Response (handle 0x0013)')
+- #2980: (27, 'Handle Value Notification (handle 0x0012)')
+- #3028: (27, 'Handle Value Notification (handle 0x0012)')
+- #3080: (27, 'Handle Value Notification (handle 0x0012)')
+- #3112: (27, 'Handle Value Notification (handle 0x0012)')
+- #3235: (18, 'Write Request (handle 0x0015)')
+- #3238: (5, 'Find Information Response (handle 0x0015)')
+### Dopo l'attivazione della cifratura [ATT visibili: 0]
+- Pacchetti cifrati totali: 16
+- Pacchetti cifrati non decifrati: 16
+- Range cifratura: #3724 → #4010
+
 
 ---

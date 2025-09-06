@@ -25,7 +25,7 @@ import sys
 from typing import Any, Dict, Iterable, List, Optional, Tuple, Union
 
 # === Config di default ===
-DEFAULT_IN_JSON = "capture_Filt.json"
+DEFAULT_IN_JSON = "Lv4_passkey_Filt.json"
 
 # -------------------------- Utility --------------------------
 
@@ -221,6 +221,20 @@ GATT_UUID16_NAMES = {
     0x2901: "Characteristic User Description",
     0x2902: "Client Characteristic Configuration (CCCD)",
     0x2904: "Characteristic Presentation Format",
+    # Services
+    0x180D: "Heart Rate Service",
+    0x180F: "Battery Service",
+
+    # Characteristics
+    0x2A37: "Heart Rate Measurement",
+    0x2A38: "Body Sensor Location",
+    0x2A19: "Battery Level",
+    0x2A6E: "Temperature",
+    0x2A6F: "Humidity",
+    0x2A6D: "Pressure",
+    0x2A29: "Manufacturer Name String",
+    0x2A24: "Model Number String",
+    0x2A25: "Serial Number String",
 }
 
 SECURITY_LEVEL_EXPLANATION = {
@@ -291,22 +305,45 @@ def is_packet_encrypted(pkt: Dict) -> Optional[bool]:
         True  -> pacchetto cifrato
         False -> pacchetto in chiaro
         None  -> informazione non disponibile
+    Strategia:
+      1) Cerca qualunque chiave che contenga 'encrypted' dentro al layer NORDIC_BLE (anche annidata).
+      2) Se non trovata, prendi 'micok' come segnale solo positivo (True => cifrato).
+      3) Fallback storico: 'mic.not.relevant' (0 => cifrato, 1 => non cifrato).
     """
-    # 1) Prova a leggere direttamente il flag "encrypted"
+    # 1) Trova i layer 'Layer NORDIC_BLE' (case-insensitive / alias)
+    nordic_layers = find_layers_by_name(pkt, candidates=("nordic_ble", "nordic"))
+
+    # 1a) scan generico: qualunque campo che contenga 'encrypted'
+    for nb in nordic_layers:
+        # prova prima come boolean
+        b = _first_bool_by_path_contains(nb, ["encrypted"])
+        if b is not None:
+            return b
+        # poi come intero 0/1
+        iv = _first_int_by_suffix(nb, ["encrypted"])
+        if iv is not None:
+            return bool(iv)
+
+    # 1b) compat: prova i path specifici usati in passato
     enc = _safe_get(pkt, ["Layer NORDIC_BLE", "encrypted"])
     if enc is None:
         enc = _safe_get(pkt, ["Layer NORDIC_BLE", "event", "encrypted"])
-
+    if enc is None:
+        enc = _safe_get(pkt, ["Layer NORDIC_BLE", "board", "encrypted"])
     if enc is not None:
-        return bool(enc)
+        return bool(_as_bool(enc) if isinstance(enc, str) else enc)
 
-    # 2) Se non troviamo il campo, usiamo il MIC (Message Integrity Check)
-    #    Quando "mic.not.relevant" = 0 -> MIC rilevante => pacchetto cifrato
-    #    Quando "mic.not.relevant" = 1 -> MIC non rilevante => pacchetto NON cifrato
+    # 2) 'micok' come segnale positivo (alcuni dump lo espongono a livello board)
+    for nb in nordic_layers:
+        micok = _first_bool_by_path_contains(nb, ["micok"])
+        if micok is True:
+            return True
+        # se è False non possiamo concludere che NON sia cifrato: ignoriamo
+
+    # 3) Fallback storico: mic.not.relevant (0 => cifrato, 1 => non cifrato)
     mic_not_relevant = _safe_get(pkt, ["Layer NORDIC_BLE", "mic", "not", "relevant"])
     if mic_not_relevant is None:
         mic_not_relevant = _safe_get(pkt, ["Layer NORDIC_BLE", "event", "mic", "not", "relevant"])
-
     if mic_not_relevant is not None:
         try:
             return not bool(int(mic_not_relevant))
@@ -314,7 +351,6 @@ def is_packet_encrypted(pkt: Dict) -> Optional[bool]:
             return None
 
     return None
-
 
 def extract_addresses(pkt: Dict) -> List[Tuple[str, str]]:
     """
@@ -335,14 +371,6 @@ def extract_addresses(pkt: Dict) -> List[Tuple[str, str]]:
 
     # 1) Ricerca mirata per suffissi comuni (indipendente dalla struttura)
     suffix_map = {
-        "initiator": [
-            "access.initiator.address", "initiator.address", "initiator.addr",
-            "access.initiator.bd.addr", "initiator.bd.addr"
-        ],
-        "advertiser": [
-            "access.advertising.address", "advertising.address", "advertiser.address",
-            "advertising.addr", "advertiser.addr", "adv.address", "adv.addr"
-        ],
         "master": [
             "data.master.bd.addr", "master.bd.addr", "master.address",
             "link.master.address", "ll.master.address"
@@ -368,11 +396,7 @@ def extract_addresses(pkt: Dict) -> List[Tuple[str, str]]:
             p = leaf  # alias
 
             # Classificazione per parole chiave nel path
-            if "initiator" in p or ".init" in p:
-                _add("initiator", s)
-            elif "advertis" in p or ".adv" in p or "advertiser" in p:
-                _add("advertiser", s)
-            elif "master" in p or "central" in p:
+            if "master" in p or "central" in p:
                 _add("master", s)
             elif "slave" in p or "peripheral" in p:
                 _add("slave", s)
@@ -498,7 +522,7 @@ def detect_smp_info(pkt: Dict) -> Optional[Dict[str, Any]]:
 
     return out if seen else None
 
-def _render_att_pretty(layer: Dict[str, Any]) -> Tuple[int, str]:
+def _render_att_pretty(layer: Dict[str, Any]) -> Tuple[Optional[int], Optional[str]]:
     op = _first_int_by_suffix(layer, ["opcode", "op", "code", "att.opcode"])
     if op is None:
         return None, None
@@ -523,15 +547,12 @@ def _render_att_pretty(layer: Dict[str, Any]) -> Tuple[int, str]:
             tag += f" ({uuid_name})"
         extra.append(tag)
 
-    # specifiche utili
-    if op == 0x12:  # Write Request
-        # prova a capire se è CCCD enable/disable
-        # spesso il valore 0001 -> Notify, 0002 -> Indicate, 0000 -> disable
+    # Write Request → CCCD enable/disable
+    if op == 0x12:
         val_hex = _first_hexstr_by_suffix(layer, ["value", "write.value", "att.value", "payload"])
         if val_hex:
             try:
-                # prendi solo primi 2 byte little-endian
-                v = int(val_hex[0:4], 16)
+                v = int(val_hex[0:4], 16)  # primi 2 byte LE
                 if uuid16 == 0x2902:
                     if v == 0x0001:
                         extra.append("CCCD: Notifications ENABLE")
@@ -541,6 +562,24 @@ def _render_att_pretty(layer: Dict[str, Any]) -> Tuple[int, str]:
                         extra.append("CCCD: Notifications/Indications DISABLE")
             except Exception:
                 pass
+
+    # **NUOVO**: decodifica valore per Read/Notify/Indicate se UUID noto
+    # Read Response
+    if op == 0x0B:
+        dec = decode_uuid_and_value(uuid16, layer)
+        if dec:
+            extra.append(dec)
+
+    # Handle Value Notification / Indication
+    if op in (0x1B, 0x1D):
+        dec = decode_uuid_and_value(uuid16, layer)
+        if dec:
+            extra.append(dec)
+        else:
+            # euristica: anche se l'UUID non è riportato nel layer, prova a estrarre HR
+            hr_guess = _extract_heart_rate(layer)
+            if hr_guess:
+                extra.append(hr_guess + " (guess)")
 
     label = base
     if extra:
@@ -582,6 +621,104 @@ def detect_att(pkt: Dict, handle_uuid_map: Dict[int, int]) -> Optional[Tuple[int
                 label += " (" + extra + ")"
 
         return op, label
+
+    return None
+
+# --- Helpers di decodifica valori ATT/GATT -----------------------------------
+
+def _extract_heart_rate(layer: Dict[str, Any]) -> Optional[str]:
+    """
+    Estrae Heart Rate Measurement (0x2A37) se presente.
+    Supporta il layout strutturato:
+      heart.rate.measurement.value.8 / .16
+      heart.rate.measurement.rr.interval / .intervals
+    Ritorna es. 'Heart Rate: 80 bpm (RR=[848, 823])' oppure None.
+    """
+    bpm8: Optional[int] = None
+    bpm16: Optional[int] = None
+    rr: Optional[str] = None
+
+    for path, _, v in _iter_kv(layer):
+        if isinstance(v, (dict, list)):
+            continue
+        joined = ".".join(path).lower()
+        # valore HR a 8 bit
+        if "heart" in joined and "rate" in joined and "measurement" in joined and joined.endswith(".value.8"):
+            iv = _as_int(v)
+            if iv is not None:
+                bpm8 = iv
+        # valore HR a 16 bit
+        if "heart" in joined and "rate" in joined and "measurement" in joined and joined.endswith(".value.16"):
+            iv = _as_int(v)
+            if iv is not None and iv > 0:
+                bpm16 = iv
+        # RR-interval
+        if "heart" in joined and "rate" in joined and "measurement" in joined and (
+            joined.endswith(".rr.interval") or joined.endswith(".rr.intervals")
+        ):
+            rr = str(v).strip()
+
+    bpm = bpm8 if (bpm8 is not None) else bpm16
+    if bpm is None:
+        return None
+
+    out = f"Heart Rate: {bpm} bpm"
+    if rr and rr not in ("[]", "None", "null"):
+        out += f" (RR={rr})"
+    return out
+
+
+def _first_any_value_number(d: Dict[str, Any]) -> Optional[int]:
+    """
+    Trova un valore numerico generico per caratteristiche molto semplici (es. Battery Level)
+    cercando chiavi che terminano con 'value' o 'att.value' o 'read.value' o simili.
+    """
+    candidates = [
+        "value", "att.value", "read.value", "gatt.value", "characteristic.value", "payload"
+    ]
+    iv = _first_int_by_suffix(d, candidates)
+    return iv
+
+
+def decode_uuid_and_value(uuid16: Optional[int], layer: Dict[str, Any]) -> Optional[str]:
+    """
+    Dato uuid16 (se noto) e il layer ATT, ritorna una stringa 'Nome: valore'
+    per alcune caratteristiche note (standard SIG). In caso non riconosciuto, None.
+    """
+    if uuid16 is None:
+        return None
+
+    # Heart Rate Measurement (0x2A37)
+    if uuid16 == 0x2A37:
+        hr = _extract_heart_rate(layer)
+        if hr:
+            return f"{hr}"
+
+    # Battery Level (0x2A19) -> percento 0..100
+    if uuid16 == 0x2A19:
+        batt = _first_any_value_number(layer)
+        if batt is not None and 0 <= batt <= 100:
+            return f"Battery Level: {batt}%"
+
+    # Temperature (0x2A6E) – se appare un intero/decimale semplice
+    if uuid16 == 0x2A6E:
+        # vari formati: a volte fixed-point, spesso un int decodificato dallo sniffer
+        val = _first_any_value_number(layer)
+        if val is not None:
+            return f"Temperature: {val} (unit per profile)"
+
+    # Humidity (0x2A6F)
+    if uuid16 == 0x2A6F:
+        val = _first_any_value_number(layer)
+        if val is not None:
+            return f"Relative Humidity: {val}"
+
+    # Generic fallback: se conosciamo un nome standard e c'è un value numerico semplice
+    name = GATT_UUID16_NAMES.get(uuid16)
+    if name:
+        val = _first_any_value_number(layer)
+        if val is not None:
+            return f"{name}: {val}"
 
     return None
 
@@ -667,6 +804,8 @@ def analyze_file(path: str, skip_att: bool=False) -> Dict[str, Any]:
     seen_ll_encryption: List[Tuple[int, str]] = []
     any_encrypted_flag = False
     first_encrypted_pkt = None
+    encrypted_pkt_numbers: List[int] = []   # <-- NEW: elenco numeri pacchetto cifrati
+
 
     connection_packet: Optional[int] = None
     connection_event: Optional[str] = None
@@ -714,6 +853,8 @@ def analyze_file(path: str, skip_att: bool=False) -> Dict[str, Any]:
             any_encrypted_flag = True
             if first_encrypted_pkt is None:
                 first_encrypted_pkt = pkt_no
+            if pkt_no is not None:
+                encrypted_pkt_numbers.append(pkt_no)
 
         # LL events
         ll_evt = detect_ll_encryption_signals(pkt)
@@ -816,11 +957,11 @@ def analyze_file(path: str, skip_att: bool=False) -> Dict[str, Any]:
                         "notes": "Decisione secondo workflow SC→OOB→MITM→IO",
                     }
 
-        # ATT visibilità (opzionale)
+        # ATT visibilità
         if not skip_att:
             att = detect_att(pkt, handle_uuid)
             if att:
-                op, name = att
+                name = att
                 if any_encrypted_flag:
                     att_encrypted.append((pkt_no, name))
                 else:
@@ -870,8 +1011,9 @@ def analyze_file(path: str, skip_att: bool=False) -> Dict[str, Any]:
         "smp_trace": smp_trace,                      # tutte le occorrenze
         "addresses": addresses,
         "address_types": addr_types,
-        "att_unencrypted": att_unencrypted[:50] if not skip_att else [],
-        "att_encrypted": att_encrypted[:50] if not skip_att else [],
+        "att_unencrypted": att_unencrypted[:500] if not skip_att else [],
+        "att_encrypted": att_encrypted[:500] if not skip_att else [],
+        "encrypted_pkt_numbers": encrypted_pkt_numbers,
         "effective_key_size": eff_key_size,
     }
 
@@ -973,18 +1115,38 @@ def format_report(res: Dict[str, Any]) -> str:
             lines.append(f"⚠️ {w}")
     lines.append("")
 
-    # ATT/GATT (come prima, con elenchi su righe separate)
-    if res.get("att_unencrypted") or res.get("att_encrypted"):
+    # ATT/GATT (visibilità e riepilogo cifratura)
+    att_plain = res.get("att_unencrypted") or []
+    att_enc   = res.get("att_encrypted") or []
+    enc_pkts  = res.get("encrypted_pkt_numbers") or []
+
+    if att_plain or att_enc or enc_pkts:
         lines.append("## ATT/GATT visibili")
-        if res.get("att_unencrypted"):
-            lines.append("### In chiaro (prima della cifratura)")
-            for n, name in res["att_unencrypted"]:
+
+        if att_plain:
+            lines.append(f"### In chiaro (prima della cifratura) [tot: {len(att_plain)}]")
+            for n, name in att_plain:
                 lines.append(f"- #{n}: {name}")
-        if res.get("att_encrypted"):
-            lines.append("### Dopo l'attivazione della cifratura")
-            for n, name in res["att_encrypted"]:
+
+        # Sezione dopo cifratura: sempre mostrata se ci sono pacchetti cifrati,
+        # anche quando non abbiamo eventi ATT perché il payload è cifrato.
+        if att_enc or enc_pkts:
+            # Conteggio ATT dopo cifratura (solo quelli con layer ATT visibile)
+            lines.append(f"### Dopo l'attivazione della cifratura [ATT visibili: {len(att_enc)}]")
+
+            # Riepilogo generale cifratura (tutti i protocolli)
+            if enc_pkts:
+                lines.append(f"- Pacchetti cifrati totali: {len(enc_pkts)}")
+                lines.append(f"- Pacchetti cifrati non decifrati: {len(enc_pkts) - len(att_enc)}")
+                lines.append(f"- Range cifratura: #{min(enc_pkts)} → #{max(enc_pkts)}")
+                lines.append("")
+
+            for n, name in att_enc:
                 lines.append(f"- #{n}: {name}")
+
         lines.append("")
+
+
 
     lines.append("---")
     return "\n".join(lines)

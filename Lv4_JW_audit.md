@@ -1,11 +1,10 @@
 # BLE Pairing Report – Lv4_JW_Filt.json
 - Record totali: 83
-- Cifratura attiva: No
+- Cifratura attiva: Sì
 - Connessione: #192 (CONNECT_IND)
+- Primo pacchetto cifrato: #1377
 
 ## Indirizzi e Tipologia
-- initiator: 62:d2:e2:e5:2b:28  →  private_resolvable
-- advertiser: 15:17:fe:9f:03:03  →  public_or_non_resolvable
 - master: 7a:94:51:c5:49:f9  →  private_resolvable
 - slave: c0:48:ff:f5:9d:b8  →  static_random
 
@@ -32,39 +31,44 @@
 
 ## Livello di Sicurezza Stimato: Mode 1 Level 4
 > LE Secure Connections con autenticazione
-_Criteri:_ LE Secure Connections, key size effettiva=16
+_Criteri:_ cifratura osservata, LE Secure Connections, key size effettiva=16
 
 ## ATT/GATT visibili
-### In chiaro (prima della cifratura)
-- #846: Exchange MTU Request (MTU=527)
-- #849: Exchange MTU Response (MTU=65)
-- #850: Read By Group Type Request (handle 0xFFFF)
-- #853: Read By Group Type Response
-- #854: Read By Group Type Request (handle 0xFFFF)
-- #857: Read By Group Type Response (handle 0x0010)
-- #858: Read By Group Type Request (handle 0xFFFF)
-- #861: Read Request (handle 0x0016)
-- #862: Read By Type Request (handle 0x0008)
-- #865: Read By Type Response
-- #866: Find Information Request (handle 0x0008)
-- #869: Find Information Response
-- #870: Write Request (handle 0x0004)
-- #873: Write Response (handle 0x0004)
-- #874: Read By Type Request (handle 0x0015)
-- #877: Read By Type Response
-- #878: Find Information Request (handle 0x0013)
-- #881: Find Information Response (handle 0x0013)
-- #956: Write Request (handle 0x0013)
-- #959: Write Response (handle 0x0013)
-- #1048: Read By Type Request (handle 0x000F)
-- #1051: Read By Type Response (handle 0x000B)
-- #1055: Handle Value Notification (handle 0x0012)
-- #1089: Handle Value Notification (handle 0x0012)
-- #1113: Handle Value Notification (handle 0x0012)
-- #1129: Handle Value Notification (handle 0x0012)
-- #1160: Handle Value Notification (handle 0x0012)
-- #1190: Handle Value Notification (handle 0x0012)
-- #1303: Write Request (handle 0x0015)
-- #1306: Find Information Response (handle 0x0015)
+### In chiaro (prima della cifratura) [tot: 30]
+- #846: (2, 'Exchange MTU Request (MTU=527)')
+- #849: (3, 'Exchange MTU Response (MTU=65)')
+- #850: (16, 'Read By Group Type Request (handle 0xFFFF)')
+- #853: (17, 'Read By Group Type Response')
+- #854: (16, 'Read By Group Type Request (handle 0xFFFF)')
+- #857: (17, 'Read By Group Type Response (handle 0x0010)')
+- #858: (16, 'Read By Group Type Request (handle 0xFFFF)')
+- #861: (10, 'Read Request (handle 0x0016)')
+- #862: (8, 'Read By Type Request (handle 0x0008)')
+- #865: (9, 'Read By Type Response')
+- #866: (4, 'Find Information Request (handle 0x0008)')
+- #869: (5, 'Find Information Response')
+- #870: (18, 'Write Request (handle 0x0004)')
+- #873: (19, 'Write Response (handle 0x0004)')
+- #874: (8, 'Read By Type Request (handle 0x0015)')
+- #877: (9, 'Read By Type Response')
+- #878: (4, 'Find Information Request (handle 0x0013)')
+- #881: (5, 'Find Information Response (handle 0x0013)')
+- #956: (18, 'Write Request (handle 0x0013)')
+- #959: (19, 'Write Response (handle 0x0013)')
+- #1048: (8, 'Read By Type Request (handle 0x000F)')
+- #1051: (9, 'Read By Type Response (handle 0x000B)')
+- #1055: (27, 'Handle Value Notification (handle 0x0012)')
+- #1089: (27, 'Handle Value Notification (handle 0x0012)')
+- #1113: (27, 'Handle Value Notification (handle 0x0012)')
+- #1129: (27, 'Handle Value Notification (handle 0x0012)')
+- #1160: (27, 'Handle Value Notification (handle 0x0012)')
+- #1190: (27, 'Handle Value Notification (handle 0x0012)')
+- #1303: (18, 'Write Request (handle 0x0015)')
+- #1306: (5, 'Find Information Response (handle 0x0015)')
+### Dopo l'attivazione della cifratura [ATT visibili: 0]
+- Pacchetti cifrati totali: 20
+- Pacchetti cifrati non decifrati: 20
+- Range cifratura: #1377 → #1978
+
 
 ---
