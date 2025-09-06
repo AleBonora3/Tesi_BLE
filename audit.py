@@ -25,7 +25,7 @@ import sys
 from typing import Any, Dict, Iterable, List, Optional, Tuple, Union
 
 # === Config di default ===
-DEFAULT_IN_JSON = "Lv4_passkey_Filt.json"
+DEFAULT_IN_JSON = "Lv4_JW_Filt.json"
 
 # -------------------------- Utility --------------------------
 
@@ -765,14 +765,16 @@ def _association_model_from_method(method: str) -> str:
 def decide_security_level(encryption_active: bool,
                           sc_both_flag: bool,
                           authenticated: bool) -> Tuple[int, str]:
-    # Regola richiesta: se entrambi i flag SC (REQ/RSP) sono a 1 => LV4
-    if sc_both_flag:
-        return 4, SECURITY_LEVEL_EXPLANATION[4]
-    # Altrimenti usa la mappa classica osservando la cifratura/autenticazione
+    # Nessuna cifratura => Level 1
     if not encryption_active:
         return 1, SECURITY_LEVEL_EXPLANATION[1]
+    # Cifrato + LESC + metodo autenticato => Level 4
+    if sc_both_flag and authenticated:
+        return 4, SECURITY_LEVEL_EXPLANATION[4]
+    # Cifrato + metodo autenticato (Legacy) => Level 3
     if authenticated:
         return 3, SECURITY_LEVEL_EXPLANATION[3]
+    # Cifrato ma non autenticato => Level 2
     return 2, SECURITY_LEVEL_EXPLANATION[2]
 
 # -------------------------- Core analysis --------------------------

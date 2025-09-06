@@ -102,7 +102,7 @@
 - #3723: LL_START_ENC_REQ
 - #3724: LL_START_ENC_RSP
 
-## Pairing (REQ/RSP, sez. 4.2)
+## Pairing (REQ/RSP)
 - Richiesta  #3239: IO=KeyboardDisplay, OOB=No, MITM=Sì, SC=Sì, KeySizeMax=16, Bonding=Sì, Keypress=No
 - Risposta   #3242: IO=DisplayOnly, OOB=No, MITM=Sì, SC=Sì, KeySizeMax=16, Bonding=Sì, Keypress=No
 → **Metodo di pairing**: Passkey Entry (LESC)  (Association model: Passkey Entry; SC entrambi: Sì, OOB entrambi: No, Key size effettiva: 16)
