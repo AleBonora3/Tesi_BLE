@@ -14,7 +14,7 @@ Questo *unico file* esegue l'intera catena per l'analisi della sicurezza BLE:
   eventuali PDU vuote (mantiene i CONNECT_IND/REQ). Output: `*_Filt.json`.
 - Step 5 – Audit (avanzato): esegue un *BLE Pairing & Security Audit* sui JSON filtrati e produce:
   • report Markdown (Mode 1 L1–L4, metodo/association model, SC/MITM, bonding, key size),
-  • opzionalmente JSON/CSV riassuntivi, 
+  • opzionalmente JSON riassuntivi, 
   • elenco ATT/GATT prima/dopo la cifratura con mappatura handle→UUID nota.
 
 Requisiti
@@ -30,7 +30,7 @@ Esempi d'uso
 
 2) Solo audit su JSON già filtrati (accetta più file) con export extra:
     python3 ble_pipeline.py --only-audit lab_Filt.json other_Filt.json \
-        --report audit.md --json-out audit.json --csv-out audit.csv
+        --report audit.md --json-out audit.json
 
 3) Pipeline completa senza seguire un device specifico:
     python3 ble_pipeline.py --skip-follow
@@ -51,7 +51,6 @@ Alessio Bonora
 #                IMPORTS
 # ==========================================
 import argparse
-import csv
 import io
 import json
 import logging
@@ -547,7 +546,7 @@ def apply_filter_to_json(in_path: Path) -> Path:
 #   STEP 5: AUDIT SICUREZZA
 # ==========================================
 def run_audit(json_inputs: List[Path], report_path: Optional[Path],
-              json_out: Optional[Path] = None, csv_out: Optional[Path] = None,
+              json_out: Optional[Path] = None,
               skip_att: bool = False):
     reports: List[str] = []
     all_results: List[Dict[str, Any]] = []
@@ -576,31 +575,6 @@ def run_audit(json_inputs: List[Path], report_path: Optional[Path],
             json.dump(all_results, f, ensure_ascii=False, indent=2)
         print(f"JSON scritto in {json_out}")
 
-    # --- Export CSV opzionale ---
-    if csv_out:
-        with open(csv_out, "w", encoding="utf-8", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=[
-                "file","records","enc_active","security_level","lesc","authenticated",
-                "pairing_method","association_model","effective_key_size",
-                "bonded_reencrypt","first_encrypted_pkt"
-            ])
-            writer.writeheader()
-            for r in all_results:
-                writer.writerow({
-                    "file": r["file"],
-                    "records": r["records"],
-                    "enc_active": r["encryption_active"],
-                    "security_level": r["security_level"],
-                    "lesc": r["lesc"],
-                    "authenticated": r["authenticated"],
-                    "pairing_method": r.get("pairing_method"),
-                    "association_model": r.get("association_model"),
-                    "effective_key_size": r.get("effective_key_size"),
-                    "bonded_reencrypt": r.get("bonded_reencrypt_suspected"),
-                    "first_encrypted_pkt": r.get("first_encrypted_packet"),
-                })
-        print(f"CSV scritto in {csv_out}")
-
 # ==========================================
 # CLI / MAIN
 # ==========================================
@@ -624,7 +598,6 @@ def main():
     # Audit options
     parser.add_argument("--report", type=str, help="Percorso file di output per il report (txt/md)")
     parser.add_argument("--json-out", type=str, default=None, help="Esporta risultati audit anche in JSON")
-    parser.add_argument("--csv-out", type=str, default=None, help="Esporta riepilogo audit in CSV")
     parser.add_argument("--skip-att", action="store_true", help="Salta analisi ATT/GATT")
     parser.add_argument("--no-audit", action="store_true", help="Disabilita l'audit automatico a fine pipeline")
     parser.add_argument("--only-audit", nargs="+", help="Salta la pipeline ed esegue solo l'audit su JSON (accetta più file)")
@@ -637,8 +610,7 @@ def main():
         inputs = [Path(p) for p in args.only_audit]
         report_path = Path(args.report) if args.report else None
         json_out = Path(args.json_out) if args.json_out else None
-        csv_out = Path(args.csv_out) if args.csv_out else None
-        run_audit(inputs, report_path, json_out=json_out, csv_out=csv_out, skip_att=args.skip_att)
+        run_audit(inputs, report_path, json_out=json_out, skip_att=args.skip_att)
         return
 
     # Pipeline completa
@@ -705,8 +677,7 @@ def main():
         # Percorsi export
         report_path = Path(args.report) if getattr(args, "report", None) else (base.parent / f"{base.stem}_audit.md")
         json_out = Path(args.json_out) if args.json_out else None
-        csv_out = Path(args.csv_out) if args.csv_out else None
-        run_audit([filtered_json], report_path, json_out=json_out, csv_out=csv_out, skip_att=args.skip_att)
+        run_audit([filtered_json], report_path, json_out=json_out, skip_att=args.skip_att)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,2 @@
+file,records,enc_active,security_level,lesc,authenticated,pairing_method,association_model,effective_key_size,bonded_reencrypt,first_encrypted_pkt
+Lv4_JW_Filt.json,83,True,2,True,False,Just Works (LESC),Just Works,16,False,1377

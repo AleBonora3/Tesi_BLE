@@ -8,7 +8,7 @@ SC/MITM/bonding e livello di sicurezza (Mode 1 Level 1..4).
 
 Uso:
   python3 ble_pairing_audit.py file1.json [file2.json ...] \
-      --out report.md --json-out report.json --csv-out report.csv \
+      --out report.md --json-out report.json \
       [--skip-att] [--debug]
 
 Note:
@@ -18,7 +18,6 @@ Note:
 """
 
 import argparse
-import csv
 import json
 import os
 import sys
@@ -1155,29 +1154,11 @@ def format_report(res: Dict[str, Any]) -> str:
 
 # -------------------------- CLI & exports --------------------------
 
-def _write_csv_row(writer, res: Dict[str, Any]):
-    px = res.get("pairing_exchange") or {}
-    dec = px.get("decision") or {}
-    writer.writerow({
-        "file": res["file"],
-        "records": res["records"],
-        "enc_active": res["encryption_active"],
-        "security_level": res["security_level"],
-        "lesc": res["lesc"],
-        "authenticated": res["authenticated"],
-        "pairing_method": res.get("pairing_method"),
-        "association_model": res.get("association_model"),
-        "effective_key_size": res.get("effective_key_size"),
-        "bonded_reencrypt": res.get("bonded_reencrypt_suspected"),
-        "first_encrypted_pkt": res.get("first_encrypted_packet"),
-    })
-
 def main(argv: Optional[List[str]] = None) -> int:
     parser = argparse.ArgumentParser(description="Analisi Pairing BLE (sez. 4.2).")
     parser.add_argument("inputs", nargs="*", help="File JSON da analizzare")
     parser.add_argument("--out", default="report.md", help="Report Markdown")
     parser.add_argument("--json-out", default=None, help="Esporta risultati anche in JSON")
-    parser.add_argument("--csv-out", default=None, help="Esporta riepilogo CSV")
     parser.add_argument("--skip-att", action="store_true", help="Salta analisi ATT/GATT")
     parser.add_argument("--debug", action="store_true", help="Debug breakpoint su errore")
     args = parser.parse_args(argv)
@@ -1212,18 +1193,6 @@ def main(argv: Optional[List[str]] = None) -> int:
         with open(args.json_out, "w", encoding="utf-8") as f:
             json.dump(all_results, f, ensure_ascii=False, indent=2)
         print(f"JSON scritto in {args.json_out}")
-
-    if args.csv_out:
-        with open(args.csv_out, "w", encoding="utf-8", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=[
-                "file","records","enc_active","security_level","lesc","authenticated",
-                "pairing_method","association_model","effective_key_size",
-                "bonded_reencrypt","first_encrypted_pkt"
-            ])
-            writer.writeheader()
-            for r in all_results:
-                _write_csv_row(writer, r)
-        print(f"CSV scritto in {args.csv_out}")
 
     return 0
 
