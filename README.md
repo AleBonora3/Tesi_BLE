@@ -11,7 +11,7 @@ L’obiettivo del progetto è realizzare una **pipeline automatizzata** per l’
 - **`ble_pipeline.py`** → avvia l’intera pipeline: cattura → conversione → parsing → filtro → audit.  
 - **`audit.py`** → esegue l’audit su file JSON già filtrati.  
 
-⚠️ Per funzionare, nella stessa cartella deve essere presente la directory:  
+Per funzionare, nella stessa cartella deve essere presente la directory:  
 ```
 ./SnifferAPI/
 ```
@@ -21,26 +21,83 @@ contenente la libreria ufficiale **SnifferAPI** estratta dal pacchetto *nRF Snif
 Gli altri file e cartelle presenti servono come **evidenze e materiali di supporto alla tesi** (report, esempi di catture, documentazione).  
 Non sono necessari per l’esecuzione della pipeline.
 
-### Requisiti
-- **Hardware**: dongle **nRF52840** con firmware *nRF Sniffer*  
-- **Software**:  
-  - Python ≥ 3.8  
-  - Dipendenze Python: `pyshark`  
-  - Wireshark (per `editcap`/`tshark`)  
-  - Cartella **SnifferAPI** nella root del progetto  
+## 🔍 Funzionalità principali
 
-### Avvio rapido
+La pipeline (`ble_pipeline.py`) implementa cinque step sequenziali:
 
-# Ambiente virtuale Python (opzionale ma consigliato)
+1. **Cattura**  
+   - Usa la **SnifferAPI Nordic** per acquisire traffico BLE tramite dongle nRF52840.  
+   - Output: file `.pcap`.
+
+2. **Conversione**  
+   - Converte automaticamente `.pcap` → `.pcapng` con `editcap` (Wireshark).  
+   - Garantisce compatibilità con `tshark`/PyShark.
+
+3. **Parsing**  
+   - Analizza i pacchetti con **PyShark**.  
+   - Serializza in JSON robusto (equivalente a `pkt.show()` di Wireshark).  
+   - Output: `<trace>.json`.
+
+4. **Filtro**  
+   - Scarta advertising generici, scan response e PDU vuote.  
+   - Mantiene solo eventi chiave (CONNECT_IND/REQ, SMP, cifratura, ATT).  
+   - Output: `<trace>_Filt.json`.
+
+5. **Audit (avanzato)**  
+   - Implementato in `audit.py`.  
+   - Genera un report completo:  
+     - Metodo di pairing e *association model* (Just Works, Passkey, Numeric Comparison, OOB)  
+     - Security Mode 1 Level (L1–L4)  
+     - Flag Secure Connections, MITM, bonding  
+     - Dimensione chiavi  
+     - Privacy degli indirizzi (public/static/random/RPA)  
+     - Visibilità ATT/GATT pre e post cifratura  
+   - Output: report **Markdown** + esportazioni opzionali JSON/CSV.
+
+---
+
+## ⚙️ Requisiti
+
+- **Python** ≥ 3.8  
+- **Dipendenze Python**: installare manualmente `pyshark`  
+  ```bash
+  pip install pyshark
+  ```
+- **Strumenti esterni**:  
+  - `editcap` (parte di Wireshark)  
+  - **SnifferAPI** (cartella `extcap` dal pacchetto ufficiale [nRF Sniffer for Bluetooth LE](https://www.nordicsemi.com/Products/Development-tools/nRF-Sniffer-for-Bluetooth-LE))  
+- **Hardware richiesto**:  
+  - **nRF52840 Dongle** (Nordic) – necessario per avviare la pipeline e catturare il traffico BLE  
+  - Qualsiasi dispositivo BLE (mouse, fascia cardio, DK nRF54L15, ciclocomputer, ecc.) per i test sperimentali
+
+---
+
+## 🖥️ Setup ambiente
+
+### 1. Preparazione
+Scarica dal sito Nordic il pacchetto **nRF Sniffer for Bluetooth LE** e copia la cartella `extcap` (contenente SnifferAPI) nella root del progetto.
+
+### 2. Ambiente virtuale
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install --upgrade pip
+pip install pyshark
+```
 
-# Avvio pipeline (cattura + analisi completa)
+---
+
+## ▶️ Esempi d’uso
+
+1. **Eseguire la pipeline completa** (cattura di 60s, base `test1`, output report `test1_audit.md`):  
+```bash
 python ble_pipeline.py --dur 60 --base test1 --report test1_audit.md
+```
 
-# Audit su file JSON già filtrato
+2. **Audit su file filtrati già disponibili** (`*_Filt.json`):  
+```bash
 python audit.py --input test1_Filt.json --md test1_audit.md
+```
 
 ---
 
@@ -48,40 +105,97 @@ python audit.py --input test1_Filt.json --md test1_audit.md
 
 This repository contains the code developed for my **Bachelor’s Thesis in Computer and Network Security** at the University of Milan.  
 
-The project implements an **automated pipeline** for analyzing the security of **Bluetooth Low Energy (BLE)** connections.  
+The goal of the project is to build an **automated pipeline** to analyze the security of **Bluetooth Low Energy (BLE)** connections.  
 
 ### Main files
 - **`ble_pipeline.py`** → runs the full pipeline: capture → convert → parse → filter → audit.  
-- **`audit.py`** → performs the audit on pre-filtered JSON files.  
+- **`audit.py`** → runs the audit on pre-filtered JSON files.  
 
-⚠️ To work correctly, the project folder must include:  
+To work properly, the following directory must be present in the same folder:  
 ```
 ./SnifferAPI/
 ```
-which contains the official **SnifferAPI** library extracted from the *nRF Sniffer for Bluetooth LE* package by Nordic Semiconductor.
+containing the official **SnifferAPI** library extracted from the *nRF Sniffer for Bluetooth LE* package provided by Nordic Semiconductor.
 
 ### Other files in the repository
-All other files and folders are provided as **supporting evidence for the thesis** (reports, capture examples, documentation).  
+Other files and folders are included as **evidence and supporting material for the thesis** (reports, capture examples, documentation).  
 They are **not required** to run the pipeline.
 
-### Requirements
-- **Hardware**: **nRF52840 dongle** with *nRF Sniffer* firmware  
-- **Software**:  
-  - Python ≥ 3.8  
-  - Python dependencies: `pyshark`  
-  - Wireshark (for `editcap`/`tshark`)  
-  - **SnifferAPI** folder in the project root  
+## 🔍 Key features
 
-### Quick start
+The pipeline (`ble_pipeline.py`) consists of five steps:
 
-# Python virtual environment (optional but recommended)
+1. **Capture**  
+   - Uses the **Nordic SnifferAPI** to capture BLE traffic with an nRF52840 dongle.  
+   - Output: `.pcap` file.
+
+2. **Conversion**  
+   - Automatically converts `.pcap` → `.pcapng` with `editcap` (Wireshark).  
+   - Ensures compatibility with `tshark`/PyShark.
+
+3. **Parsing**  
+   - Analyzes packets with **PyShark**.  
+   - Serializes robust JSON (equivalent to Wireshark `pkt.show()`).  
+   - Output: `<trace>.json`.
+
+4. **Filtering**  
+   - Removes generic advertising, scan responses, and empty PDUs.  
+   - Keeps only relevant events (CONNECT_IND/REQ, SMP, encryption, ATT).  
+   - Output: `<trace>_Filt.json`.
+
+5. **Audit (advanced)**  
+   - Implemented in `audit.py`.  
+   - Produces a detailed report including:  
+     - Pairing method and association model (Just Works, Passkey, Numeric Comparison, OOB)  
+     - Security Mode 1 Level (L1–L4)  
+     - Secure Connections, MITM, bonding  
+     - Key size  
+     - BLE address privacy (public/static/random/RPA)  
+     - ATT/GATT visibility before and after encryption  
+   - Output: **Markdown report** + optional JSON/CSV exports.
+
+---
+
+## ⚙️ Requirements
+
+- **Python** ≥ 3.8  
+- **Python dependencies**: install `pyshark` manually  
+  ```bash
+  pip install pyshark
+  ```
+- **External tools**:  
+  - `editcap` (part of Wireshark)  
+  - **SnifferAPI** (from the official [nRF Sniffer for Bluetooth LE](https://www.nordicsemi.com/Products/Development-tools/nRF-Sniffer-for-Bluetooth-LE))  
+- **Hardware required**:  
+  - **nRF52840 Dongle** (Nordic) – required to start the pipeline and capture BLE traffic  
+  - Any BLE device (mouse, heart rate strap, nRF54L15 DK, bike computer, etc.) for testing
+
+---
+
+## 🖥️ Environment setup
+
+### 1. Preparation
+Download the official **nRF Sniffer for Bluetooth LE** package from Nordic and copy the `extcap` folder (with SnifferAPI) into the project root.
+
+### 2. Virtual environment
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install --upgrade pip
+pip install pyshark
+```
 
-# Run the full pipeline (capture + analysis)
+---
+
+## ▶️ Usage examples
+
+1. **Run full pipeline** (60s capture, base `test1`, output report `test1_audit.md`):  
+```bash
 python ble_pipeline.py --dur 60 --base test1 --report test1_audit.md
+```
 
-# Run audit only on filtered JSON file
+2. **Audit only** on pre-filtered JSON (`*_Filt.json`):  
+```bash
 python audit.py --input test1_Filt.json --md test1_audit.md
 ```
+

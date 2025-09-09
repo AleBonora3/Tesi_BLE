@@ -32,9 +32,6 @@ Esempi d'uso
     python3 ble_pipeline.py --only-audit lab_Filt.json other_Filt.json \
         --report audit.md --json-out audit.json
 
-3) Pipeline completa senza seguire un device specifico:
-    python3 ble_pipeline.py --skip-follow
-
 Note
 ----
 - Se `editcap` non è disponibile, il tool prova ad usare direttamente il `.pcap` per PyShark.
