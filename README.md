@@ -1,59 +1,87 @@
 # BLE End-to-End Security Pipeline  
 *(capture → convert → parse → filter → audit)*
 
-Questo progetto implementa una pipeline automatizzata completa per l’**analisi della sicurezza delle connessioni Bluetooth Low Energy (BLE)**.  
-Il file principale da eseguire è **`ble_pipeline.py`**, che copre l’intero flusso end-to-end.
+## 🇮🇹 Descrizione (Italiano)
 
----
+Questo repository contiene il codice sviluppato per la mia **tesi triennale in Sicurezza dei Sistemi e delle Reti Informatiche** presso l’Università degli Studi di Milano.  
 
-##  Funzionalità della pipeline
+L’obiettivo del progetto è realizzare una **pipeline automatizzata** per l’analisi della sicurezza delle connessioni **Bluetooth Low Energy (BLE)**.  
 
-1. **Cattura**  
-   Usa **SnifferAPI** (estratta dalla cartella `extcap` del pacchetto ufficiale) per acquisire traffico BLE e salvarlo in `.pcap`.
+### File principali
+- **`ble_pipeline.py`** → avvia l’intera pipeline: cattura → conversione → parsing → filtro → audit.  
+- **`audit.py`** → esegue l’audit su file JSON già filtrati.  
 
-2. **Conversione**  
-   Converte automaticamente in `.pcapng` tramite `editcap` (parte di Wireshark) per garantire compatibilità con i tool di analisi.
+⚠️ Per funzionare, nella stessa cartella deve essere presente la directory:  
+```
+./SnifferAPI/
+```
+contenente la libreria ufficiale **SnifferAPI** estratta dal pacchetto *nRF Sniffer for Bluetooth LE* fornito da Nordic Semiconductor.
 
-3. **Parsing**  
-   Utilizza **PyShark** per analizzare i pacchetti e serializzarli in JSON (equivalente di `pkt.show()`), con un parser robusto ai cambiamenti di layout.
+### Altri file nel repository
+Gli altri file e cartelle presenti servono come **evidenze e materiali di supporto alla tesi** (report, esempi di catture, documentazione).  
+Non sono necessari per l’esecuzione della pipeline.
 
-4. **Filtro**  
-   Scarta:
-   - advertising generici  
-   - scan response  
-   - PDU vuote  
-   e mantiene i pacchetti **CONNECT_IND/REQ**.  
-   Output: `*_Filt.json`.
+### Requisiti
+- **Hardware**: dongle **nRF52840** con firmware *nRF Sniffer*  
+- **Software**:  
+  - Python ≥ 3.8  
+  - Dipendenze Python: `pyshark`  
+  - Wireshark (per `editcap`/`tshark`)  
+  - Cartella **SnifferAPI** nella root del progetto  
 
-5. **Audit (avanzato)**  
-   Applica un *BLE Pairing & Security Audit* sui JSON filtrati, generando:
-   - un **report Markdown** (Mode 1 L1–L4, metodo/association model, SC/MITM, bonding, key size)  
-   - **JSON/CSV opzionali** di riepilogo  
-   - una mappa ATT/GATT (handle → UUID) prima e dopo cifratura.
+### Avvio rapido
 
----
-
-##  Requisiti
-
-- **Python** ≥ 3.8  
-- **Dipendenze Python**: `pyshark` (vedi `requirements.txt`)  
-- **SnifferAPI**: disponibile nella cartella `extcap` del pacchetto ufficiale “nRF Sniffer for Bluetooth LE” disponibile sul sito di Nordic :contentReference[oaicite:1]{index=1}  
-- **Tool esterni**: `editcap` (incluso in Wireshark)  
-- **Hardware**: dongle o board compatibile con SnifferAPI (es. **nRF52840 Dongle**) :contentReference[oaicite:2]{index=2}
-
----
-
-##  Setup ambiente
-
-### 1. Scarica il pacchetto ufficiale Sniffer
-Vai qui e scarica l’ultima versione ZIP:
-- [Download nRF Sniffer for Bluetooth LE] :contentReference[oaicite:3]{index=3}
-
-All’interno del ZIP troverai una cartella `extcap` contenente la libreria **SnifferAPI**.
-
-### 2. Ambiente virtuale Python
-```bash
+# Ambiente virtuale Python (opzionale ma consigliato)
 python3 -m venv .venv
 source .venv/bin/activate
-pip install --upgrade pip
 pip install -r requirements.txt
+
+# Avvio pipeline (cattura + analisi completa)
+python ble_pipeline.py --dur 60 --base test1 --report test1_audit.md
+
+# Audit su file JSON già filtrato
+python audit.py --input test1_Filt.json --md test1_audit.md
+
+---
+
+## 🇬🇧 Description (English)
+
+This repository contains the code developed for my **Bachelor’s Thesis in Computer and Network Security** at the University of Milan.  
+
+The project implements an **automated pipeline** for analyzing the security of **Bluetooth Low Energy (BLE)** connections.  
+
+### Main files
+- **`ble_pipeline.py`** → runs the full pipeline: capture → convert → parse → filter → audit.  
+- **`audit.py`** → performs the audit on pre-filtered JSON files.  
+
+⚠️ To work correctly, the project folder must include:  
+```
+./SnifferAPI/
+```
+which contains the official **SnifferAPI** library extracted from the *nRF Sniffer for Bluetooth LE* package by Nordic Semiconductor.
+
+### Other files in the repository
+All other files and folders are provided as **supporting evidence for the thesis** (reports, capture examples, documentation).  
+They are **not required** to run the pipeline.
+
+### Requirements
+- **Hardware**: **nRF52840 dongle** with *nRF Sniffer* firmware  
+- **Software**:  
+  - Python ≥ 3.8  
+  - Python dependencies: `pyshark`  
+  - Wireshark (for `editcap`/`tshark`)  
+  - **SnifferAPI** folder in the project root  
+
+### Quick start
+
+# Python virtual environment (optional but recommended)
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+# Run the full pipeline (capture + analysis)
+python ble_pipeline.py --dur 60 --base test1 --report test1_audit.md
+
+# Run audit only on filtered JSON file
+python audit.py --input test1_Filt.json --md test1_audit.md
+```
