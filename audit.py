@@ -20,6 +20,7 @@ Note:
 import argparse
 import json
 import os
+import yaml
 import sys
 from typing import Any, Dict, Iterable, List, Optional, Tuple, Union
 
@@ -213,35 +214,65 @@ ATT_OPS = {
     0x1E: "Handle Value Confirmation",
 }
 
-GATT_UUID16_NAMES = {
-    0x2800: "Primary Service",
-    0x2801: "Secondary Service",
-    0x2803: "Characteristic Declaration",
-    0x2901: "Characteristic User Description",
-    0x2902: "Client Characteristic Configuration (CCCD)",
-    0x2904: "Characteristic Presentation Format",
-    # Services
-    0x180D: "Heart Rate Service",
-    0x180F: "Battery Service",
-
-    # Characteristics
-    0x2A37: "Heart Rate Measurement",
-    0x2A38: "Body Sensor Location",
-    0x2A19: "Battery Level",
-    0x2A6E: "Temperature",
-    0x2A6F: "Humidity",
-    0x2A6D: "Pressure",
-    0x2A29: "Manufacturer Name String",
-    0x2A24: "Model Number String",
-    0x2A25: "Serial Number String",
-}
-
 SECURITY_LEVEL_EXPLANATION = {
     1: "Nessuna cifratura, nessuna autenticazione",
     2: "Cifratura senza autenticazione",
     3: "Cifratura con autenticazione MITM",
     4: "LE Secure Connections con autenticazione",
 }
+
+# --- Catalogo UUID da YAML (sostituisce il vecchio GATT_UUID16_NAMES hardcoded) ---
+BLE_SERVICES:        dict[str, str] = {}
+BLE_CHARACTERISTICS: dict[str, str] = {}
+BLE_DECLARATIONS:    dict[str, str] = {}
+BLE_DESCRIPTORS:     dict[str, str] = {}
+
+def _read_yaml_uuids(path: str) -> dict[str, str]:
+    """Legge un file yaml con struttura:
+    uuids:
+      - uuid: 0x2A19
+        name: Battery Level
+      - uuid: 0x180D
+        name: Heart Rate Service
+    Ritorna { "2a19": "Battery Level", "180d": "Heart Rate Service", ... }.
+    """
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = yaml.load(f, Loader=yaml.FullLoader) or {}
+    except FileNotFoundError:
+        return {}
+    out: dict[str, str] = {}
+    for item in data.get("uuids", []):
+        u = item.get("uuid")
+        name = item.get("name")
+        if not u or not name:
+            continue
+        if isinstance(u, int):
+            key = f"{u:04x}"
+        else:
+            s = str(u).strip().lower()
+            if s.startswith("0x"):
+                s = s[2:]
+            key = s
+        out[key] = str(name)
+    return out
+
+def load_uuid_catalog(uuid_dir: str = "uuid_dir"):
+    global BLE_SERVICES, BLE_CHARACTERISTICS, BLE_DECLARATIONS, BLE_DESCRIPTORS
+    BLE_SERVICES        = _read_yaml_uuids(os.path.join(uuid_dir, "service_uuids.yaml"))
+    BLE_CHARACTERISTICS = _read_yaml_uuids(os.path.join(uuid_dir, "characteristic_uuids.yaml"))
+    BLE_DECLARATIONS    = _read_yaml_uuids(os.path.join(uuid_dir, "declaration_uuids.yaml"))
+    BLE_DESCRIPTORS     = _read_yaml_uuids(os.path.join(uuid_dir, "descriptor_uuids.yaml"))
+
+def _uuid16_to_name(u16: Optional[int]) -> Optional[str]:
+    """Cerca il nome per un UUID16 nelle 4 tabelle YAML."""
+    if u16 is None:
+        return None
+    k = f"{u16:04x}"
+    return (BLE_CHARACTERISTICS.get(k)
+            or BLE_SERVICES.get(k)
+            or BLE_DECLARATIONS.get(k)
+            or BLE_DESCRIPTORS.get(k))
 
 # -------------------------- Parsers --------------------------
 
@@ -533,7 +564,7 @@ def _render_att_pretty(layer: Dict[str, Any]) -> Tuple[Optional[int], Optional[s
     mtu = _first_int_by_suffix(layer, ["mtu", "exchange.mtu", "client.rx.mtu", "server.rx.mtu"])
     uuid_hex = _first_hexstr_by_suffix(layer, ["uuid", "type.uuid", "attribute.uuid", "group.type", "att.type"])
     uuid16 = _parse_uuid16(uuid_hex)
-    uuid_name = GATT_UUID16_NAMES.get(uuid16)
+    uuid_name = _uuid16_to_name(uuid16)
 
     extra = []
     if op in (0x02, 0x03) and mtu is not None:
@@ -610,7 +641,7 @@ def detect_att(pkt: Dict, handle_uuid_map: Dict[int, int]) -> Optional[Tuple[int
         # se il renderer non ha avuto UUID ma abbiamo la mappa, arricchisci la label
         if h is not None and (uuid16 is None) and (h in handle_uuid_map):
             known_uuid16 = handle_uuid_map[h]
-            known_name = GATT_UUID16_NAMES.get(known_uuid16)
+            known_name = _uuid16_to_name(known_uuid16)
             extra = f"handle 0x{h:04X} → UUID 0x{known_uuid16:04X}"
             if known_name:
                 extra += f" ({known_name})"
@@ -713,7 +744,7 @@ def decode_uuid_and_value(uuid16: Optional[int], layer: Dict[str, Any]) -> Optio
             return f"Relative Humidity: {val}"
 
     # Generic fallback: se conosciamo un nome standard e c'è un value numerico semplice
-    name = GATT_UUID16_NAMES.get(uuid16)
+    name = _uuid16_to_name(uuid16)
     if name:
         val = _first_any_value_number(layer)
         if val is not None:
@@ -1162,6 +1193,10 @@ def main(argv: Optional[List[str]] = None) -> int:
     parser.add_argument("--skip-att", action="store_true", help="Salta analisi ATT/GATT")
     parser.add_argument("--debug", action="store_true", help="Debug breakpoint su errore")
     args = parser.parse_args(argv)
+    
+    # Carica i nomi UUID da yaml_dir
+    load_uuid_catalog("uuid_dir")
+
 
     inputs = args.inputs if args.inputs else [DEFAULT_IN_JSON]
     inputs = [str(p) for p in inputs]

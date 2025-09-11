@@ -56,6 +56,7 @@ import re
 import subprocess
 import sys
 import time
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Optional, List, Tuple, Iterable, Union
 
@@ -77,6 +78,20 @@ except Exception:  # pragma: no cover
 
 # --- Audit ---
 from audit import analyze_file as audit_analyze_file, format_report as audit_format_report
+
+# --- Directory di output organizzate ---
+BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
+PCAP_DIR   = os.path.join(BASE_DIR, "captures")
+JSON_DIR   = os.path.join(BASE_DIR, "json")
+REPORTS_DIR = os.path.join(BASE_DIR, "reports")
+
+os.makedirs(REPORTS_DIR, exist_ok=True)
+os.makedirs(PCAP_DIR, exist_ok=True)
+os.makedirs(JSON_DIR, exist_ok=True)
+
+def _ts():
+    # timestamp comodo per i file
+    return datetime.now().strftime("%Y%m%d_%H%M%S")
 
 # ==========================================
 #         STEP 1: CATTURA PCAP
@@ -611,10 +626,11 @@ def main():
         return
 
     # Pipeline completa
-    base = Path(args.base)
-    pcap_path = base.with_suffix(".pcap")
-    pcapng_path = base.with_suffix(".pcapng")
-    json_path = base.with_suffix(".json")
+    base_name = Path(args.base).stem  # solo nome, senza cartella/estensione
+    pcap_path   = Path(PCAP_DIR)   / f"{base_name}.pcap"
+    pcapng_path = Path(PCAP_DIR)   / f"{base_name}.pcapng"
+    json_path   = Path(JSON_DIR)   / f"{base_name}.json"
+
 
     # Step 1: cattura
     sniffer = setup_sniffer()
@@ -672,7 +688,7 @@ def main():
     # Step 5: audit (di default attivo)
     if not args.no_audit:
         # Percorsi export
-        report_path = Path(args.report) if getattr(args, "report", None) else (base.parent / f"{base.stem}_audit.md")
+        report_path = Path(args.report) if getattr(args, "report", None) else (Path(REPORTS_DIR) / f"{base_name}_audit.md")
         json_out = Path(args.json_out) if args.json_out else None
         run_audit([filtered_json], report_path, json_out=json_out, skip_att=args.skip_att)
 
