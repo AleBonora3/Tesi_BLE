@@ -27,3 +27,6 @@ SnifferAPI/
 # (opzionale) file PCAP/PCAPNG pesanti prodotti dallo sniffer
 *.pcap
 #*.pcapng
+
+codici_iniziali/
+# codici inizali implementati in pipeline e audit
